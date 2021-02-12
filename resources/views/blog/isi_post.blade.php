@@ -5,10 +5,7 @@
 	@foreach($data as $isi_post)
 
 	<div id="post-header" class="page-header">
-			<div class="page-header-bg" style="
-			background-image: url( {{asset($isi_post->gambar) }} );" 
-
-			data-stellar-background-ratio="0.5"></div>
+			<div class="page-header-bg" data-stellar-background-ratio="0.5"><img src="{{asset($isi_post->gambar) }}" alt=""></div>
 			<div class="container">
 				<div class="row">
 					<div class="col-md-10">

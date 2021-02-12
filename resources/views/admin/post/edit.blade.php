@@ -54,7 +54,7 @@
   <div class="form-group">
       <label>Konten</label>
       <textarea class="form-control" name="content" id="content">{{ $post->content }}</textarea>
-  </div>
+  </div>    
   <div class="form-group">
       <label>Thumbnail</label>
       <input type="file" name="gambar" class="form-control">

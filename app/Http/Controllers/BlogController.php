@@ -10,11 +10,17 @@ class BlogController extends Controller
 {
     public function index(Posts $posts){
         $category_widget = Category::all();
-
-    	$data = $posts->latest()->take(8)->get();
-    	return view('blog', compact('data','category_widget'));
+        $datas = [
+            'data' => $posts->latest()->take(5)->get(),
+            'data2' => $posts->latest()->take(7)->get(),
+        ];
+    	return view('blog', compact('datas','category_widget'));
     }
-
+    public function index2(Posts $posts){
+        $category_widget = Category::all();
+        $data = $posts->get();
+    	return view('blog.newrelease', compact('data','category_widget'));
+    }
     public function isi_blog($slug){
         $category_widget = Category::all();
         

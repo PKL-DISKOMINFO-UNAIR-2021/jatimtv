@@ -1,0 +1,14 @@
+.movies-heading{
+    margin-top: 10px;
+}
+.carousel-inner{
+    margin-top: -16px;
+}
+.carousel-item {
+    height: 400px;
+}
+
+.movies-box p {
+    font-size: 12px;
+    text-align: left;
+}

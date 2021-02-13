@@ -1,101 +1,89 @@
-	<!-- FOOTER -->
-	<footer id="footer">
-		<!-- container -->
-		<div class="container">
-			<!-- row -->
-			<div class="row">
-				<div class="col-md-3">
-					<div class="footer-widget">
-						<div class="footer-logo">
-							<a href="index.html" class="logo"><img src="./img/logo-alt.png" alt=""></a>
-						</div>
-						<p>Nec feugiat nisl pretium fusce id velit ut tortor pretium. Nisl purus in mollis nunc sed. Nunc non blandit massa enim nec.</p>
-						<ul class="contact-social">
-							<li><a href="#" class="social-facebook"><i class="fa fa-facebook"></i></a></li>
-							<li><a href="#" class="social-twitter"><i class="fa fa-twitter"></i></a></li>
-							<li><a href="#" class="social-google-plus"><i class="fa fa-google-plus"></i></a></li>
-							<li><a href="#" class="social-instagram"><i class="fa fa-instagram"></i></a></li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-md-3">
-					<div class="footer-widget">
-						<h3 class="footer-title">Categories</h3>
-						<div class="category-widget">
-							<ul>
-								@foreach($category_widget as $hasil)
-								<li><a href="#">{{ $hasil->name }} <span>{{ $hasil->posts->count() }}</span></a></li>
-								@endforeach
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3">
-					<div class="footer-widget">
-						<h3 class="footer-title">Tags</h3>
-						<div class="tags-widget">
-							<ul>
-								<li><a href="#">Social</a></li>
-								<li><a href="#">Lifestyle</a></li>
-								<li><a href="#">Blog</a></li>
-								<li><a href="#">Travel</a></li>
-								<li><a href="#">Technology</a></li>
-								<li><a href="#">Fashion</a></li>
-								<li><a href="#">Life</a></li>
-								<li><a href="#">News</a></li>
-								<li><a href="#">Magazine</a></li>
-								<li><a href="#">Food</a></li>
-								<li><a href="#">Health</a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3">
-					<div class="footer-widget">
-						<h3 class="footer-title">Newsletter</h3>
-						<div class="newsletter-widget">
-							<form>
-								<p>Nec feugiat nisl pretium fusce id velit ut tortor pretium.</p>
-								<input class="input" name="newsletter" placeholder="Enter Your Email">
-								<button class="primary-button">Subscribe</button>
-							</form>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- /row -->
+<footer class="footer-distributed">
+ 
+ <div class="footer-left">
 
-			<!-- row -->
-			<div class="footer-bottom row">
-				<div class="col-md-6 col-md-push-6">
-					<ul class="footer-nav">
-						<li><a href="index.html">Home</a></li>
-						<li><a href="about.html">About Us</a></li>
-						<li><a href="contact.html">Contacts</a></li>
-						<li><a href="#">Advertise</a></li>
-						<li><a href="#">Privacy</a></li>
-					</ul>
-				</div>
-				<div class="col-md-6 col-md-pull-6">
-					<div class="footer-copyright">
-						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-					</div>
-				</div>
-			</div>
-			<!-- /row -->
-		</div>
-		<!-- /container -->
-	</footer>
-	<!-- /FOOTER -->
+   <img src="img/logo.png" href="/">
 
-	<!-- jQuery Plugins -->
-	<script src="{{ asset('public/frontend/js/jquery.min.js') }}"></script>
-	<script src="{{ asset('public/frontend/js/bootstrap.min.js') }}"></script>
-	<script src="{{ asset('public/frontend/js/jquery.stellar.min.js') }}"></script>
-	<script src="{{ asset('public/frontend/js/main.js') }}"></script>
+       <p class="footer-links">
+       <a href="/">Home</a>
+     ·
+       <a href="/explore">Explore</a>
+     ·
+       <a href="/newrelease">New Release</a>
+     ·
+       <a href="/about">About</a>
+       </p>
+   
+       <p class="footer-company-name">Kominfo-Jatim &copy; 2021</p>
+ </div>
+ 
+<div class="footer-center">
+ 
+     <div>
+           <i class="fa fa-map-marker"></i>
+           <p><span>Jl. A. Yani 242 - 244, Surabaya. </span></p>
+       </div>
+       <div>
+           <i class="fa fa-phone"></i>
+           <p>(031) 8294608</p>
+       </div>
+       <div>
+           <i class="fa fa-envelope"></i>
+           <p> kominfo@jatimprov.go.id</p>
+       </div>
 
-</body>
+</div>
+<div class="footer-right">
 
-</html>
+   <p class="footer-company-about">
+   <span>Follow Us</span>
+   Please Follow us on our Social Media Profile in order to keep updated.
+   </p>
+
+   <div class="footer-icons">
+ 
+           <a href="http://kominfo.jatimprov.go.id/"><i class="fas fa-globe"></i></a>
+           <a href="https://www.instagram.com/kominfojatim/"><i class="fab fa-instagram"></i></a>
+           <a href="https://www.youtube.com/channel/UCEe1ees-scoEkTQv3he9PJw"><i class="fab fa-youtube"></i></a>
+
+   </div>
+
+</div>
+
+</footer>
+<div class="footer2">
+   <p><span><i class="fas fa-copyright"></i>Powered by</span>PKL Sistem Informasi Unair 2021</p>
+
+</div>
+
+<!-- Script Navbar -->
+<script>
+    const menuBtn = document.querySelector(".menu-icon span");
+    const searchBtn = document.querySelector(".search-icon");
+    const cancelBtn = document.querySelector(".cancel-icon");
+    const items = document.querySelector(".nav-items");
+    const form = document.querySelector("form");
+    menuBtn.onclick = ()=>{
+      items.classList.add("active");
+      menuBtn.classList.add("hide");
+      searchBtn.classList.add("hide");
+      cancelBtn.classList.add("show");
+    }
+    cancelBtn.onclick = ()=>{
+      items.classList.remove("active");
+      menuBtn.classList.remove("hide");
+      searchBtn.classList.remove("hide");
+      cancelBtn.classList.remove("show");
+      form.classList.remove("active");
+      cancelBtn.style.color = "#ff3d00";
+    }
+    searchBtn.onclick = ()=>{
+      form.classList.add("active");
+      searchBtn.classList.add("hide");
+      cancelBtn.classList.add("show");
+    }
+  </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    
+    </body>
+    </html>

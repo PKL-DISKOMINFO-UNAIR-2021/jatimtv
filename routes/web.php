@@ -13,7 +13,8 @@
 
 Auth::routes();
 
-Route::get('/', 'BlogController@index');
+Route::get('/', 'BlogController@index')->name('blog');
+Route::get('/newrelease', 'BlogController@index2')->name('blog.newrelease');
 /*Route::get('/isi_post', function(){
 	return view('blog.isi_post');
 });*/
@@ -36,8 +37,9 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::resource('/post', 'PostController');
 	Route::resource('/user', 'UserController');
 });
-
-
+Route::get('/test', function(){
+    return view('blog.isi_post');
+});
 
 
 

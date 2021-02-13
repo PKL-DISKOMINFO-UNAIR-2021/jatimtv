@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+    background: #fff;
+    margin-top: 100px;
+}
+.label {
+    background-color: rgb(151, 148, 148);
+}
+.active {
+    background-color:rgb(151, 148, 148);
+}
+.about p{
+    word-spacing: 2px;
+    line-height: 25px;
+    text-align: justify;
+}
+.alamat p{
+    word-spacing: 2px;
+    line-height: 20px;
+}

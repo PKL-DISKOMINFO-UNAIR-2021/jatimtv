@@ -1,106 +1,199 @@
-@extends('template_blog.content')
-	
-@section('isi')
-<div class="col-md-8 hot-post-left">
-					<!-- post -->
-					<div class="post post-thumb">
-						<a class="post-img" href="blog-post.html"><img src="{{ asset('public/frontend/img/hot-post-1.jpg')}}" alt=""></a>
-						<div class="post-body">
-							<div class="post-category">
-								<a href="category.html">Lifestyle</a>
-							</div>
-							<h3 class="post-title title-lg"><a href="blog-post.html">Postea senserit id eos, vivendo periculis ei qui</a></h3>
-							<ul class="post-meta">
-								<li><a href="author.html">John Doe</a></li>
-								<li>20 April 2018</li>
-							</ul>
-						</div>
-					</div>
-					<!-- /post -->
-				</div>
-				<div class="col-md-4 hot-post-right">
-					<!-- post -->
-					<div class="post post-thumb">
-						<a class="post-img" href="blog-post.html"><img src="{{ asset('public/frontend/img/hot-post-2.jpg')}}" alt=""></a>
-						<div class="post-body">
-							<div class="post-category">
-								<a href="category.html">Lifestyle</a>
-							</div>
-							<h3 class="post-title"><a href="blog-post.html">Sed ut perspiciatis, unde omnis iste natus error sit</a></h3>
-							<ul class="post-meta">
-								<li><a href="author.html">John Doe</a></li>
-								<li>20 April 2018</li>
-							</ul>
-						</div>
-					</div>
-					<!-- /post -->
 
-					<!-- post -->
-					<div class="post post-thumb">
-						<a class="post-img" href="blog-post.html"><img src="{{ asset('public/frontend/img/hot-post-3.jpg')}}" alt=""></a>
-						<div class="post-body">
-							<div class="post-category">
-								<a href="category.html">Fashion</a>
-								<a href="category.html">Lifestyle</a>
-							</div>
-							<h3 class="post-title"><a href="blog-post.html">Mel ut impetus suscipit tincidunt. Cum id ullum laboramus persequeris.</a></h3>
-							<ul class="post-meta">
-								<li><a href="author.html">John Doe</a></li>
-								<li>20 April 2018</li>
-							</ul>
-						</div>
-					</div>
-					<!-- /post -->
-				</div>
-	
-		<!-- /container -->
-	</div>
-	<!-- /SECTION -->
-
-	<!-- SECTION -->
-	<div class="section">
-		<!-- container -->
-		<div class="container">
-			<!-- row -->
-			<div class="row">
-				<div class="col-md-8">
-					<!-- row -->
-					<div class="row">
-						<div class="col-md-12">
-							<div class="section-title">
-								<h2 class="title">Postingan Terbaru</h2>
-							</div>
-						</div>
-						<!-- post -->
-						@foreach($data as $post_terbaru)
-						<div class="col-md-6">
-							<div class="post">
-								<a class="post-img" href="{{ route('blog.isi', $post_terbaru->slug ) }}"><img src="{{ $post_terbaru->gambar }}" alt="" style="height: 200px"></a>
-								<div class="post-body">
-									<div class="post-category">
-										<a href="#">{{ $post_terbaru->category->name }}</a>
-									</div>
-									<h3 class="post-title"><a href="#">{{ $post_terbaru->judul }}</a></h3>
-									<ul class="post-meta">
-										<li><a href="#">{{ $post_terbaru->users->name }}</a></li>
-										<li>{{ $post_terbaru->created_at->diffForHumans() }}</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						@endforeach
-			
-					</div>
-					<!-- /row -->
-
-	
-				</div>
-				
-		
-		
-			<!-- /row -->
+@extends('template_blog/content')
+@section('linkcss')
+<link rel="stylesheet" href="{{ asset('public/css/lightslider.css') }}">
 @endsection
+@section('title','home')
+@section('nav')
+<div class="nav-items">
+        <li><a class="active"href="{{ route('blog') }}">HOME</a></li>
+        <li><a href="/explore">EXPLORE</a></li>
+        <li><a href="{{ route('blog.newrelease') }}">NEW RELEASE</a></li>
+        <li><a href="/about">ABOUT</a></li>
+        <hr>
+        <li><a class="fas" href="#"><i class="fas fa-bell mr-3" data-toggle="tooltip" title="notifications"></i></a></li>
+        <li ><a class="signin" href="/logins">SIGN IN</a></li>
+      </div>
+@endsection
+@section('isi')
+    <!-- Carousel -->
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        </ol>
+
+        <div class="carousel-inner">
+     
+            <div class="carousel-item active">
+                <img class="d-block w-100" src="" alt="First slide">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h2> <span class="font-weight-bold">SELAMAT DATANG DI JATIM TV</span></h5>
+                        <p>Streaming Informasi dan Video dari Dinas KOMINFO Prov. JAWA TIMUR</p>
+                        <p class="lead">
+                            <a class="btn btn-primary btn-lg" href="/newrelease" role="button">NEW RELEASE</a>
+                        </p>
+                    </div>
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="img/slide2.jpg" alt="Second slide">
+                <div class="carousel-caption d-none d-md-block">
+                    <h2> <span class="font-weight-bold">KUNJUNGI CHANNEL YOUTUBE KAMI</span></h5>
+                    <p>Streaming Informasi dan Video dari Youtube KOMINFO Prov. JAWA TIMUR</p>
+                    <p class="lead">
+                        <a class="btn btn-primary btn-lg" href="https://www.youtube.com/channel/UCEe1ees-scoEkTQv3he9PJw" role="button">GO TO YOUTUBE</a>
+                    </p>
+                </div>
+            </div>
+
+            
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+        </div>
+
+<section id="main">
+        <!--showcase----------------------->
+        <!--heading------------->
+        <a class="showcase-heading">NEW RELEASE</a>
+        <a class="showcase-heading-kanan" href="{{ route('blog.newrelease') }}" style="float:right;">VIEW ALL</a>
+
+        <ul id="autoWidth" class="cs-hidden">
+		@foreach ($datas ['data'] as $nr)
+       		<!--box-1--------------------------->
+        	<li class="item-a">
+            	<!--showcase-box------------------->
+           		<div class="showcase-box">
+               		<a href="{{ route('blog.isi', $nr->slug ) }}"><img src="{{ $nr->gambar }}"/></a>  
+           		</div>
+            </li>
+			@endforeach
+          </ul>
+    </section>
 
 
+    <!--latest-movies---------------------->
+    <section id="latest">
+        <a class="latest-heading">CHANNEL</a>
+	
+        <!--slider------------------->
+        <ul id="autoWidth2" class="cs-hidden">
+            <!--slide-box-1------------------>
+			@foreach ($datas ['data2'] as $c)
+            <li class="item-a">
+			
+                <div class="latest-box">
+				
+                    <!--img-------->
+                    <div class="latest-b-img">
+                    <a href="{{ route('blog.isi', $c->slug ) }}"> <img src="{{ $c->gambar }}"></a>
+                    </div>
+                    <!--text---------->
+                    <div class="latest-b-text">
+                        <strong>{{ $c->judul }}</strong>
+                        <p>{{ $c->category->name }}</p>
+                    </div>
+                </div>
+            </li>
+			@endforeach
+    </section>
+	
+    <!--movies---------------------------->
+    <section id="top">
+    <a class="latest-heading">EXPLORE</a>
+    <a class="showcase-heading-kanan" href="/explore" style="float:right;">VIEW ALL</a>
+    </section>
+    
+    <section id="movies-list">
+        <!--box-1------------------------>
+        <div class="movies-box">
+            <!--img------------>
+            <div class="movies-img">
+                <div class="quality">Live Record</div>
+                <img src="">
+            </div>
+            <!--text--------->
+            <a href="/Explore-Item7">
+            
+            </a>
+        </div>
+         <!--box-2------------------------>
+         <div class="movies-box">
+            <!--img------------>
+            <div class="movies-img">
+                <div class="quality">Live Record</div>
+                <img src=''>
+            </div>
+            <!--text--------->
+            <a href="/Explore-Item8">
+            
+            </a>
+        </div>
+         <!--box-3------------------------>
+         <div class="movies-box">
+            <!--img------------>
+            <div class="movies-img">
+                <div class="quality">Live Record</div>
+                <img src=''>
+            </div>
+            <!--text--------->
+            <a href="/Explore-Item9">
+            
+            </a>
+        </div>
+        
+    </section>
+    
+    <!--PLAYLIST-->
+    <section id="top">
+    <a class="latest-heading">PLAYLIST</a>
+    <a class="showcase-heading-kanan" href="/explore" style="float:right;">VIEW ALL</a>
+    </section>
+    
+    <section id="movies-list">
+        <!--box-1------------------------>
+        <div class="movies-box">
+            <!--img------------>
+            <div class="movies-img">
+                <div class="quality">Playlist 6 Video</div>
+                <img src="img/playlist1.jpg">
+            </div>
+            <!--text--------->
+            <a href="/relevance">
+            RELEVANCE VIDEO
+            </a>
+        </div>
+         <!--box-2------------------------>
+         <div class="movies-box">
+            <!--img------------>
+            <div class="movies-img">
+                <div class="quality">Playlist 6 Video</div>
+                <img src= "img/playlist2.jpg">
+            </div>
+            <!--text--------->
+            <a href="/mostrating">
+            MOST RATING
+            </a>
+        </div>
+         
+        
+    </section>
+    <script>
+        $(document).ready(function() {
+        $('#autoWidth,#autoWidth2').lightSlider({
+            autoWidth:true,
+            loop:true,
+            onSliderLoad: function() {
+                $('#autoWidth,#autoWidth2').removeClass('cS-hidden');
+            } 
+        });  
+    });
+    </script>
 
-
+@endsection

@@ -20,7 +20,7 @@
         <div class="row">
 		
             <div class="col">
-			@foreach($datas ['data2'] as $isi_post)
+			@foreach($data as $isi_post)
                 <div class="feature-img">
 					{!! $isi_post->content !!}
                 </div>
@@ -30,7 +30,7 @@
 
             <div class="col">
                 <h1>Recommendation</h1>
-                @foreach($datas ['data'] as $r)
+                @foreach($data as $r)
                 <div class="small-img-row">
                     <div class="small-img">
                        <img src="../{{ $r->gambar }}" alt="{{ $r->gambar }}">

@@ -21,7 +21,7 @@ class BlogController extends Controller
         $data = $posts->get();
     	return view('blog.newrelease', compact('data','category_widget'));
     }
-    
+
     public function isi_blog($slug, Posts $posts){
         $category_widget = Category::all();
         $datas = [

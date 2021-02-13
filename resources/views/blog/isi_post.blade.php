@@ -33,7 +33,7 @@
                 @foreach($data as $r)
                 <div class="small-img-row">
                     <div class="small-img">
-                       <img src="../{{ $r->gambar }}" alt="{{ $r->gambar }}">
+                       <img src="../{{ $r->gambar }}">
                     </div>
                     <a href="{{ route('blog.isi', $r->slug ) }}"><p>{{ $r->judul }}</p></a>
                 </div>

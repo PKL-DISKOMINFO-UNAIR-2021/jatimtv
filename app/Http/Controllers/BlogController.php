@@ -21,15 +21,11 @@ class BlogController extends Controller
         $data = $posts->get();
     	return view('blog.newrelease', compact('data','category_widget'));
     }
-
-    public function isi_blog($slug, Posts $posts){
+    public function isi_blog($slug){
         $category_widget = Category::all();
-        $datas = [
-            'data' => $posts->oldest()->take(5)->get(),
-            'data2' => Posts::where('slug', $slug)->get(),
-        ];
-    	
-    	return view('blog.isi_post', compact('datas','category_widget'));
+        
+    	$data = Posts::where('slug', $slug)->get();
+    	return view('blog.isi_post', compact('data','category_widget'));
     }
 
     public function list_blog(){

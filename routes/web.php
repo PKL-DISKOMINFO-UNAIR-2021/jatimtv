@@ -38,7 +38,7 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::resource('/user', 'UserController');
 });
 Route::get('/test', function(){
-    return view('blog.isi_post');
+    return view('test');
 });
 
 

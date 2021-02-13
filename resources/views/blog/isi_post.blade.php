@@ -20,7 +20,7 @@
         <div class="row">
 		
             <div class="col">
-			@foreach($data as $isi_post)
+			@foreach($datas ['data2'] as $isi_post)
                 <div class="feature-img">
 					{!! $isi_post->content !!}
                 </div>
@@ -30,36 +30,14 @@
 
             <div class="col">
                 <h1>Recommendation</h1>
+                @foreach($datas ['data'] as $r)
                 <div class="small-img-row">
                     <div class="small-img">
-                        <img src="">
+                        <a href="{{ route('blog.isi', $r->slug ) }}"><img src="{{ $r->gambar }}"/></a>
                     </div>
-                    <a href="/Recomendation-Item1"><p>1</p></a>
+                    <a href="{{ route('blog.isi', $r->slug ) }}"><p>{{ $r->judul }}</p></a>
                 </div>
-                <div class="small-img-row">
-                    <div class="small-img">
-                        <img src="">
-                    </div>
-                    <a href="/Recomendation-Item2"><p>2</p></a>
-                </div>
-                <div class="small-img-row">
-                    <div class="small-img">
-                        <img src="">
-                    </div>
-                    <a href="/Recomendation-Item3"> <p>3</p></a>
-                </div>
-                <div class="small-img-row">
-                    <div class="small-img">
-                        <img src="">
-                    </div>
-                    <a href= "/Recomendation-Item4"> <p> 4</p> </a>
-                </div>
-                <div class="small-img-row">
-                    <div class="small-img">
-                        <img src="">
-                    </div>
-                    <a href="/Recomendation-Item5"><p>5</p></a>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>

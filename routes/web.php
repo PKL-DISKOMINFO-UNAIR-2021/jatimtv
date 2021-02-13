@@ -18,10 +18,6 @@ Route::get('/newrelease', 'BlogController@index2')->name('blog.newrelease');
 /*Route::get('/isi_post', function(){
 	return view('blog.isi_post');
 });*/
-<<<<<<< HEAD
-=======
-Route::get('/{slug}', 'BlogController@isi_blog')->name('blog.rekom');
->>>>>>> cbd2cf099a76f98a31e9f83669d3bb48b05f11f7
 Route::get('/list-post/{slug}', 'BlogController@isi_blog')->name('blog.isi');
 Route::get('/list-post','BlogController@list_blog')->name('blog.list');
 Route::get('/list-category/{category}','BlogController@list_category')->name('blog.category');

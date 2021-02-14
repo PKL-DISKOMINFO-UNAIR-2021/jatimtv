@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="{{ asset('public/assets/modules/fontawesome/css/all.min.css') }}">
   <link rel="stylesheet" href="{{ asset('public/assets/modules/select2/dist/css/select2.min.css') }}">
 
+
   <!-- CSS Libraries -->
 
   <!-- Template CSS -->

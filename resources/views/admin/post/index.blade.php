@@ -19,7 +19,6 @@
 				<th>Kategori</th>
 				<th>Daftar Tags</th>
 				<th>Creator</th>
-				<th>Video</th>
 				<th>Thumbnail</th>
 				<th>Action</th>
 			</tr>

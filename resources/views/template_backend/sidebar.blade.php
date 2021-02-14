@@ -1,13 +1,13 @@
 <div class="main-sidebar sidebar-style-2">
         <aside id="sidebar-wrapper">
           <div class="sidebar-brand">
-            <a href="index.html">Stisla</a>
+            <img src="{{ asset('public/img/logo.png') }}"width="60%" >
           </div>
           <div class="sidebar-brand sidebar-brand-sm">
-            <a href="index.html">St</a>
+          <img src="{{ asset('public/img/logo.png') }}" width="90%">
           </div>
           <ul class="sidebar-menu">
-            <li class="menu-header">Dashboard</li>
+            <li class="menu-header"></li>
 
             <li class=active><a class="nav-link" href="{{ route('home') }}"><i class="fas fa-fire"></i> <span>Dashboard</span></a></li>
 
@@ -30,6 +30,12 @@
               <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="far fa-bookmark"></i> <span>Tag</span></a>
               <ul class="dropdown-menu">
                 <li><a class="nav-link" href="{{ route('tag.index') }}">List Tag</a></li>            
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-exclamation-circle"></i><span>About</span></a>
+              <ul class="dropdown-menu">
+                <li><a class="nav-link" href="{{ route('about.index') }}">Edit Halaman About</a></li>            
               </ul>
             </li>
             <li class="dropdown">

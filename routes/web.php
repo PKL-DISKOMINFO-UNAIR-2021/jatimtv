@@ -41,6 +41,14 @@ Route::get('/test', function(){
     return view('test');
 });
 
+// about
+Route::get('/admin/about','AboutController@index')->name('about.index');
+Route::get('/admin/about/tambah','AboutController@tambah')->name('about.tambah');
+Route::post('/admin/about/store','AboutController@store')->name('about.store');
+Route::get('/admin/about/edit/{id}','AboutController@edit')->name('about.edit');
+Route::post('/admin/about/update/{id}','AboutController@update')->name('about.update');
+Route::get('/admin/about/hapus/{id}','AboutController@hapus')->name('about.hapus');
+
 
 
 

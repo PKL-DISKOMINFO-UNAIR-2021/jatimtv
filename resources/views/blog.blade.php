@@ -9,7 +9,7 @@
         <li><a class="active"href="{{ route('blog') }}">HOME</a></li>
         <li><a href="/explore">EXPLORE</a></li>
         <li><a href="{{ route('blog.newrelease') }}">NEW RELEASE</a></li>
-        <li><a href="/about">ABOUT</a></li>
+        <li><a href="{{ route('blog.about') }}">ABOUT</a></li>
       </div>
 @endsection
 @section('isi')

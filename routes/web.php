@@ -15,6 +15,7 @@ Auth::routes();
 
 Route::get('/', 'BlogController@index')->name('blog');
 Route::get('/newrelease', 'BlogController@index2')->name('blog.newrelease');
+Route::get('/abouts', 'BlogController@about')->name('blog.about');
 /*Route::get('/isi_post', function(){
 	return view('blog.isi_post');
 });*/
@@ -36,18 +37,12 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::delete('/post/kill/{id}', 'PostController@kill')->name('post.kill');
 	Route::resource('/post', 'PostController');
 	Route::resource('/user', 'UserController');
+	Route::resource('/about', 'AboutsController');
 });
 Route::get('/test', function(){
     return view('test');
 });
 
-// about
-Route::get('/admin/about','AboutController@index')->name('about.index');
-Route::get('/admin/about/tambah','AboutController@tambah')->name('about.tambah');
-Route::post('/admin/about/store','AboutController@store')->name('about.store');
-Route::get('/admin/about/edit/{id}','AboutController@edit')->name('about.edit');
-Route::post('/admin/about/update/{id}','AboutController@update')->name('about.update');
-Route::get('/admin/about/hapus/{id}','AboutController@hapus')->name('about.hapus');
 
 
 

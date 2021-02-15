@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Posts;
 use App\Category;
+use App\Abouts;
 
 class BlogController extends Controller
 {
@@ -21,6 +22,11 @@ class BlogController extends Controller
         $data = $posts->get();
     	return view('blog.newrelease', compact('data','category_widget'));
     }
+    public function about(){
+        $about = Abouts::all();
+    	return view('blog.about', compact('about'));
+    }
+
     
     public function isi_blog($slug, Posts $posts){
         $category_widget = Category::all();

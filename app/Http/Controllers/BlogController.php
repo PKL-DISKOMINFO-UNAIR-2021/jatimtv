@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Posts;
 use App\Channel;
 use App\Category;
+use App\Abouts;
 
 class BlogController extends Controller
 {
@@ -23,7 +24,16 @@ class BlogController extends Controller
         $data = $posts->get();
     	return view('blog.newrelease', compact('data','category_widget'));
     }
+<<<<<<< HEAD
    
+=======
+    public function about(){
+        $about = Abouts::all();
+    	return view('blog.about', compact('about'));
+    }
+
+    
+>>>>>>> a3a660b47665630a9815d472e07dcf0512b1903a
     public function isi_blog($slug, Posts $posts){
         $category_widget = Category::all();
         $datas = [

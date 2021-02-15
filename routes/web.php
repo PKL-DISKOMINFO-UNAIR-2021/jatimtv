@@ -30,6 +30,11 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('/home', 'HomeController@index')->name('home');
 	Route::resource('/category', 'CategoryController');
 	Route::resource('/tag', 'TagController');
+	Route::resource('/channels', 'ChannelController');
+
+	Route::get('/channels/tampil_hapus', 'ChannelController@tampil_hapus')->name('channels.tampil_hapus');
+	Route::get('/channels/restore/{id}', 'ChannelController@restore')->name('channels.restore');
+	Route::delete('/channels/kill/{id}', 'ChannelController@kill')->name('channels.kill');
 
 	Route::get('/post/tampil_hapus', 'PostController@tampil_hapus')->name('post.tampil_hapus');
 	Route::get('/post/restore/{id}', 'PostController@restore')->name('post.restore');

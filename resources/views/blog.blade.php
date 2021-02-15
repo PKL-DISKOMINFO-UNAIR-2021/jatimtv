@@ -82,19 +82,18 @@
         <!--slider------------------->
         <ul id="autoWidth2" class="cs-hidden">
             <!--slide-box-1------------------>
-			@foreach ($datas ['data2'] as $c)
+			@foreach ($datas ['data3'] as $c)
             <li class="item-a">
 			
                 <div class="latest-box">
 				
                     <!--img-------->
                     <div class="latest-b-img">
-                    <a href="{{ route('blog.isi', $c->slug ) }}"> <img src="{{ $c->gambar }}"></a>
+                    <a href="{{ $c->url_channel }}"> <img src="{{ $c->gambar }}"></a>
                     </div>
                     <!--text---------->
                     <div class="latest-b-text">
                         <strong>{{ $c->judul }}</strong>
-                        <p>{{ $c->category->name }}</p>
                     </div>
                 </div>
             </li>

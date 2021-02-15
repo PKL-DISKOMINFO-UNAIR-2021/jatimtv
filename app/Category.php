@@ -13,6 +13,9 @@ class Category extends Model
     public function posts(){
     	return $this->hasMany('App\Posts');
     }
+	public function channels(){
+    	return $this->hasMany('App\Channel');
+    }
 
     public function getRouteKeyName()
 	{

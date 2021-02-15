@@ -11,4 +11,8 @@ class Tags extends Model
     public function posts(){
     	return $this->belongsToMany('App\Posts');
     }
+
+    public function channels(){
+    	return $this->belongsToMany('App\Channels');
+    }
 }

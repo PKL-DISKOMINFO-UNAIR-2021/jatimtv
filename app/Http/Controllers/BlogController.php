@@ -4,18 +4,20 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Posts;
+use App\explores;
 use App\Channel;
 use App\Category;
 use App\Abouts;
 
 class BlogController extends Controller
 {
-    public function index(Posts $posts, Channel $channels){
+    public function index(Posts $posts, Channel $channels, explores $explore){
         $category_widget = Category::all();
         $datas = [
             'data' => $posts->oldest()->take(5)->get(),
             'data2' => $posts->latest()->take(7)->get(),
             'data3' => $channels->latest()->take(7)->get(),
+            'data4' => $explore->latest()->take(3)->get(),
         ];
     	return view('blog', compact('datas','category_widget'));
     }
@@ -24,6 +26,11 @@ class BlogController extends Controller
         $data = $posts->get();
     	return view('blog.newrelease', compact('data','category_widget'));
     }
+    public function index3(explores $explore){
+        $category_widget = Category::all();
+        $explore= $explore->get();
+    	return view('blog.explore', compact('explore','category_widget'));
+    }
    
     public function about(){
         $about = Abouts::all();
@@ -31,14 +38,14 @@ class BlogController extends Controller
     }
 
     
-    public function isi_blog($slug, Posts $posts){
+    public function isi_blog($slug, Posts $posts, explores $explore){
         $category_widget = Category::all();
         $datas = [
             'data' => $posts->oldest()->take(5)->get(),
             'data2' => Posts::where('slug', $slug)->get(),
         ];
-    	
-    	return view('blog.isi_post', compact('datas','category_widget'));
+    	$data3 = explores::where('slug', $slug)->get();
+    	return view('blog.isi_post', compact('datas','category_widget','data3'));
     }
 
     public function list_blog(){

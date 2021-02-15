@@ -7,7 +7,7 @@
 @section('nav')
 <div class="nav-items">
         <li><a class="active"href="{{ route('blog') }}">HOME</a></li>
-        <li><a href="/explore">EXPLORE</a></li>
+        <li><a href="{{ route('blog.explore') }}">EXPLORE</a></li>
         <li><a href="{{ route('blog.newrelease') }}">NEW RELEASE</a></li>
         <li><a href="{{ route('blog.about') }}">ABOUT</a></li>
       </div>
@@ -103,47 +103,24 @@
     <!--movies---------------------------->
     <section id="top">
     <a class="latest-heading">EXPLORE</a>
-    <a class="showcase-heading-kanan" href="/explore" style="float:right;">VIEW ALL</a>
+    <a class="showcase-heading-kanan" href="{{ route('blog.explore') }}" style="float:right;">VIEW ALL</a>
     </section>
     
     <section id="movies-list">
+        @foreach ($datas ['data4'] as $e)
         <!--box-1------------------------>
         <div class="movies-box">
             <!--img------------>
             <div class="movies-img">
-                <div class="quality">Live Record</div>
-                <img src="">
+                <div class="quality">{{ $e->category->name }}</div>
+                <a href="{{ route('blog.isi', $e->slug ) }}"><img src="{{ $e->gambar }}"></a>
             </div>
             <!--text--------->
-            <a href="/Explore-Item7">
-            
+            <a href="{{ route('blog.isi', $e->slug ) }}">
+            {{ $e->judul}}
             </a>
         </div>
-         <!--box-2------------------------>
-         <div class="movies-box">
-            <!--img------------>
-            <div class="movies-img">
-                <div class="quality">Live Record</div>
-                <img src=''>
-            </div>
-            <!--text--------->
-            <a href="/Explore-Item8">
-            
-            </a>
-        </div>
-         <!--box-3------------------------>
-         <div class="movies-box">
-            <!--img------------>
-            <div class="movies-img">
-                <div class="quality">Live Record</div>
-                <img src=''>
-            </div>
-            <!--text--------->
-            <a href="/Explore-Item9">
-            
-            </a>
-        </div>
-        
+        @endforeach
     </section>
     
     <!--PLAYLIST-->

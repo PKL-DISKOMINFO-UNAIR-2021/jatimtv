@@ -33,6 +33,13 @@
               </ul>
             </li>
             <li class="dropdown">
+              <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-book-open"></i> <span>Explore</span></a>
+              <ul class="dropdown-menu">
+                <li><a class="nav-link" href="{{ route('explore.index') }}">List Explore</a></li> 
+                <li><a class="nav-link" href="{{ route('explore.tampil_hapus') }}">List Explore Dihapus</a></li>              
+              </ul>
+            </li>
+            <li class="dropdown">
               <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="far fa-bookmark"></i> <span>Tag</span></a>
               <ul class="dropdown-menu">
                 <li><a class="nav-link" href="{{ route('tag.index') }}">List Tag</a></li>            

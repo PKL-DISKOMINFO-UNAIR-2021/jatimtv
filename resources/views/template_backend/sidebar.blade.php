@@ -29,7 +29,7 @@
             <li class="dropdown">
               <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fab fa-youtube"></i> <span>Channels</span></a>
               <ul class="dropdown-menu">
-                <li><a class="nav-link" href="{{ route('channels.index') }}">List Channels</a></li>            
+                <li><a class="nav-link" href="{{ route('channels.index') }}">List Edit Channels</a></li>            
               </ul>
             </li>
             <li class="dropdown">

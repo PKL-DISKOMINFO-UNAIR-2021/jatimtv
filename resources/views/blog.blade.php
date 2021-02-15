@@ -113,10 +113,10 @@
             <!--img------------>
             <div class="movies-img">
                 <div class="quality">{{ $e->category->name }}</div>
-                <a href="{{ route('blog.isi', $e->slug ) }}"><img src="{{ $e->gambar }}"></a>
+                <a href="{{ route('blog.isiexplore', $e->slug ) }}"><img src="{{ $e->gambar }}"></a>
             </div>
             <!--text--------->
-            <a href="{{ route('blog.isi', $e->slug ) }}">
+            <a href="{{ route('blog.isiexplore', $e->slug ) }}">
             {{ $e->judul}}
             </a>
         </div>

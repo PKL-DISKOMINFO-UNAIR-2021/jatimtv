@@ -38,14 +38,21 @@ class BlogController extends Controller
     }
 
     
-    public function isi_blog($slug, Posts $posts, explores $explore){
+    public function isi_blog($slug, Posts $posts){
         $category_widget = Category::all();
         $datas = [
             'data' => $posts->oldest()->take(5)->get(),
             'data2' => Posts::where('slug', $slug)->get(),
         ];
-    	$data3 = explores::where('slug', $slug)->get();
-    	return view('blog.isi_post', compact('datas','category_widget','data3'));
+    	return view('blog.isi_post', compact('datas','category_widget'));
+    }
+    public function isi_blog1($slug, explores $explore){
+        $category_widget = Category::all();
+        $datas = [
+            'data' => $explore->oldest()->take(5)->get(),
+            'data2' => explores::where('slug', $slug)->get(),
+        ];
+    	return view('blog.isi_explore', compact('datas','category_widget'));
     }
 
     public function list_blog(){

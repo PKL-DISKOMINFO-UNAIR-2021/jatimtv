@@ -31,7 +31,7 @@
             <!--img------------>
             <div class="movies-img">
                 <div class="quality">{{ $ex->category->name }}</div>
-                <a href="{{ route('blog.isi', $ex->slug ) }}"><img src="{{ $ex->gambar }}"/></a>
+                <a href="{{ route('blog.isiexplore', $ex->slug ) }}"><img src="{{ $ex->gambar }}"/></a>
             </div>
             <!--text--------->
             <a href="{{ route('blog.isi', $ex->slug ) }}">

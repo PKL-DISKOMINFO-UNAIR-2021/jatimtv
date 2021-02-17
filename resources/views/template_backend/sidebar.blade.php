@@ -14,10 +14,10 @@
 
             <li class="menu-header">Starter</li>
             <li class="dropdown">
-              <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-book-open"></i> <span>New Release</span></a>
+              <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-book-open"></i> <span>Post</span></a>
               <ul class="dropdown-menu">
-                <li><a class="nav-link" href="{{ route('post.index') }}">List New Release</a></li> 
-                <li><a class="nav-link" href="{{ route('post.tampil_hapus') }}">List New Release Dihapus</a></li>              
+                <li><a class="nav-link" href="{{ route('post.index') }}">List Post</a></li> 
+                <li><a class="nav-link" href="{{ route('post.tampil_hapus') }}">List Post Dihapus</a></li>              
               </ul>
             </li>
             <li class="dropdown">
@@ -35,7 +35,14 @@
             <li class="dropdown">
               <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-sliders-h"></i> <span>Carousel</span></a>
               <ul class="dropdown-menu">
-                <li><a class="nav-link" href="{{ route('carousel.index') }}">List Carousel</a></li>
+                <li><a class="nav-link" href="{{ route('carousel.index') }}">List Carousel</a></li>            
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-globe"></i> <span>Explore</span></a>
+              <ul class="dropdown-menu">
+                <li><a class="nav-link" href="{{ route('explore.index') }}">List Explore</a></li> 
+                <li><a class="nav-link" href="{{ route('explore.tampil_hapus') }}">List Explore Dihapus</a></li>              
               </ul>
             </li>
             <li class="dropdown">

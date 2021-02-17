@@ -68,7 +68,7 @@ class BlogController extends Controller
     public function list_category(category $category){
         $category_widget = Category::all();
 
-        $data = $category->posts()->paginate(6);
+        $data = $category->explores()->paginate(6);
         return view('blog.list_post', compact('data','category_widget'));
     }
 

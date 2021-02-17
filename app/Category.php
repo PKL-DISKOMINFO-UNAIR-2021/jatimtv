@@ -17,7 +17,7 @@ class Category extends Model
     	return $this->hasMany('App\Channel');
     }
 	public function explores(){
-    	return $this->hasMany('App\Explore');
+    	return $this->hasMany('App\explores');
     }
 
     public function getRouteKeyName()

@@ -134,32 +134,21 @@
     </section>
     
     <section id="movies-list">
-        <!--box-1------------------------>
-        <div class="movies-box">
-            <!--img------------>
-            <div class="movies-img">
-                <div class="quality">Playlist 6 Video</div>
-                <img src="img/playlist1.jpg">
-            </div>
-            <!--text--------->
-            <a href="/relevance">
-            RELEVANCE VIDEO
-            </a>
-        </div>
-         <!--box-2------------------------>
-         <div class="movies-box">
-            <!--img------------>
-            <div class="movies-img">
-                <div class="quality">Playlist 6 Video</div>
-                <img src= "img/playlist2.jpg">
-            </div>
-            <!--text--------->
-            <a href="/mostrating">
-            MOST RATING
-            </a>
-        </div>
-         
-        
+        <!-- category widget -->
+		<div class="aside-widget">
+			<div class="section-title">
+				<h2 class="title">Categories</h2>
+			</div>
+			<div class="category-widget">
+				<ul>
+					@foreach($category_widget as $hasil)
+						<li><a href="{{ route('blog.category', $hasil->slug) }}">{{ $hasil->name }}<span>{{ $hasil->posts->count() }}</span></a></li>
+                        <li><a href="{{ route('blog.category', $hasil->slug) }}">{{ $hasil->name }}<span>{{ $hasil->explores->count() }}</span></a></li>
+					@endforeach
+				</ul>
+			</div>
+		</div>
+		<!-- /category widget --> 
     </section>
     <script>
         $(document).ready(function() {

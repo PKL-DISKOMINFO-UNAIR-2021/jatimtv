@@ -44,8 +44,8 @@
       <div class="cancel-icon">
         <span class="fas fa-times"></span>
       </div>
-      <form action="#">
-              <input type="search" class="search-data" placeholder="Search" required>
+      <form action="{{ route('blog.cari') }}" method="get">
+              <input type="search" class="search-data" placeholder="Search" name="cari" required>
               <button type="submit" class="fas fa-search"></button>
             </form>
   </nav>  <!-- akhir Navbar -->

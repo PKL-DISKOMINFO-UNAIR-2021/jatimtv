@@ -9,10 +9,11 @@ use App\Channel;
 use App\Category;
 use App\Carousels;
 use App\Abouts;
+use App\Bannernewrelease;
 
 class BlogController extends Controller
 {
-    public function index(Posts $posts, Channel $channels, explores $explore, Carousels $carousel){
+    public function index(Posts $posts, Channel $channels, explores $explore, Carousels $carousel, Bannernewrelease $bannernewrelease){
         $category_widget = Category::all();
         $datas = [
             'data' => $posts->oldest()->take(5)->get(),
@@ -20,13 +21,18 @@ class BlogController extends Controller
             'data3' => $channels->latest()->take(7)->get(),
             'data4' => $explore->latest()->take(3)->get(),
             'data5' => $carousel->latest()->take(5)->get(),
+            'data6' => $bannernewrelease->latest()->take(1)->get(),
         ];
     	return view('blog', compact('datas','category_widget'));
     }
-    public function index2(Posts $posts){
+    public function index2(Posts $posts, Bannernewrelease $bannernewrelease){
         $category_widget = Category::all();
         $data = $posts->get();
-    	return view('blog.newrelease', compact('data','category_widget'));
+        $data = [
+            'data1' => $posts->get(),
+            'data6' => $bannernewrelease->latest()->take(1)->get(),
+        ];
+    	return view('blog.newrelease', compact('data','category_widget','bannernewrelease'));
     }
     public function index3(explores $explore){
         $category_widget = Category::all();
@@ -40,11 +46,12 @@ class BlogController extends Controller
     }
 
     
-    public function isi_blog($slug, Posts $posts){
+    public function isi_blog($slug, Posts $posts, Bannernewrelease $bannernewrelease){
         $category_widget = Category::all();
         $datas = [
             'data' => $posts->oldest()->take(5)->get(),
             'data2' => Posts::where('slug', $slug)->get(),
+            'data6' => $bannernewrelease->latest()->take(1)->get(),
         ];
     	return view('blog.isi_post', compact('datas','category_widget'));
     }

@@ -14,18 +14,19 @@
     @section('isi')
     
     <!--Bannerr--> 
+    @foreach ($data ['data6'] as $banner)
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img class="d-block w-100" src="{{ asset('public/img/bannernewrelease.jpg') }}" alt="First slide">
+            <img class="d-block w-100" src="{{$banner->gambar}}" alt="First slide">
         </div>
     </div>
-    
+    @endforeach
     <!--explore content---------------------------->
     <div class="movies-heading">
         <h2>NEW RELEASE</h2>
     </div>
     <section id="movies-list">
-    @foreach ($data as $nr)
+    @foreach ($data ['data1'] as $nr)
         <!--box-1------------------------>
         <div class="movies-box">
             <!--img------------>

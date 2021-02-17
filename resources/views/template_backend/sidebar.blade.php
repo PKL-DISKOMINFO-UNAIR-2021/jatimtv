@@ -14,10 +14,10 @@
 
             <li class="menu-header">Starter</li>
             <li class="dropdown">
-              <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-book-open"></i> <span>Post</span></a>
+              <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-book-open"></i> <span>New Release</span></a>
               <ul class="dropdown-menu">
-                <li><a class="nav-link" href="{{ route('post.index') }}">List Post</a></li> 
-                <li><a class="nav-link" href="{{ route('post.tampil_hapus') }}">List Post Dihapus</a></li>              
+                <li><a class="nav-link" href="{{ route('post.index') }}">List New Release</a></li> 
+                <li><a class="nav-link" href="{{ route('post.tampil_hapus') }}">List New Release Dihapus</a></li>              
               </ul>
             </li>
             <li class="dropdown">

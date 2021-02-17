@@ -19,7 +19,7 @@ class BlogController extends Controller
             'data2' => $posts->latest()->take(7)->get(),
             'data3' => $channels->latest()->take(7)->get(),
             'data4' => $explore->latest()->take(3)->get(),
-            'data5' => $carousel->latest()->take(3)->get(),
+            'data5' => $carousel->latest()->take(5)->get(),
         ];
     	return view('blog', compact('datas','category_widget'));
     }

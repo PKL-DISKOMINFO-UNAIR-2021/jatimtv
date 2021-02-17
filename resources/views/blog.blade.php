@@ -16,34 +16,37 @@
     <!-- Carousel -->
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <?php
+            $i = 0;
+                foreach ($datas ['data5'] as $caro){
+                    $active = '';
+                    if($i ==0){
+                    $active = 'active';
+                }
+            ?>
+            <li data-target="#carouselExampleIndicators" data-slide-to="<?= $i; ?>" class="<?= $active; ?>"></li>
+            <?php $i++; } ?>
         </ol>
-
         <div class="carousel-inner">
-     
-            <div class="carousel-item active">
-                <img class="d-block w-100" src="" alt="First slide">
+            <?php
+                $i = 0;
+                    foreach ($datas ['data5'] as $caro){
+                        $active = '';
+                        if($i ==0){
+                        $active = 'active';
+                    }
+                ?>
+            <div class="carousel-item <?= $active; ?>">
+                <img class="d-block w-100" src="{{$caro->gambar}}">
                     <div class="carousel-caption d-none d-md-block">
-                        <h2> <span class="font-weight-bold">SELAMAT DATANG DI JATIM TV</span></h5>
-                        <p>Streaming Informasi dan Video dari Dinas KOMINFO Prov. JAWA TIMUR</p>
+                        <h2> <span class="font-weight-bold">{!!$caro->title!!}</span></h5>
+                        <p>{!!$caro->content!!}</p>
                         <p class="lead">
-                            <a class="btn btn-primary btn-lg" href="/newrelease" role="button">NEW RELEASE</a>
+                            <a class="btn btn-primary btn-lg" href="{{ $caro->link }}" role="button">CHECK OUT</a>
                         </p>
                     </div>
             </div>
-            <div class="carousel-item">
-                <img class="d-block w-100" src="img/slide2.jpg" alt="Second slide">
-                <div class="carousel-caption d-none d-md-block">
-                    <h2> <span class="font-weight-bold">KUNJUNGI CHANNEL YOUTUBE KAMI</span></h5>
-                    <p>Streaming Informasi dan Video dari Youtube KOMINFO Prov. JAWA TIMUR</p>
-                    <p class="lead">
-                        <a class="btn btn-primary btn-lg" href="https://www.youtube.com/channel/UCEe1ees-scoEkTQv3he9PJw" role="button">GO TO YOUTUBE</a>
-                    </p>
-                </div>
-            </div>
-
-            
+            <?php $i++; } ?>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -53,7 +56,8 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
         </a>
-        </div>
+    </div>
+<!-- END CAROUSEL -->
 
 <section id="main">
         <!--showcase----------------------->

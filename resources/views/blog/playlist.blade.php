@@ -2,13 +2,14 @@
 @section('linkcss')
 <link rel="stylesheet" href="{{ asset('public/css/newrelease.css') }}">
 @endsection
-@section('title','newrelease')
+@section('title','Playlist')
 @section('nav')
 <div class="nav-items">
     <li><a href="{{ route('blog') }}">HOME</a></li>
     <li><a href="{{ route('blog.explore') }}">EXPLORE</a></li>
-    <li><a class="active"href="{{ route('blog.newrelease') }}">NEW RELEASE</a></li>
+    <li><a href="{{ route('blog.newrelease') }}">NEW RELEASE</a></li>
     <li><a href="{{ route('blog.about') }}">ABOUT</a></li>
+
 </div>
 @endsection
     @section('isi')
@@ -23,10 +24,10 @@
     @endforeach
     <!--explore content---------------------------->
     <div class="movies-heading">
-        <h2>NEW RELEASE</h2>
+        <h2>PLAYLIST</h2>
     </div>
     <section id="movies-list">
-    @foreach ($data ['tags_newrelease'] as $nr)
+    @foreach ($data ['playlist1'] as $nr)
         <!--box-1------------------------>
         <div class="movies-box">
             <!--img------------>

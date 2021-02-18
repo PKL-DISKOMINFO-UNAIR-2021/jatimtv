@@ -27,12 +27,11 @@
         <h2>EXPLORE</h2>
     </div>
     <section id="movies-list">
-    @foreach ($explore as $ex)
+    @foreach ($tags_explore as $ex)
         <!--box-1------------------------>
         <div class="movies-box">
             <!--img------------>
             <div class="movies-img">
-                <div class="quality">{{ $ex->category->name }}</div>
                 <a href="{{ route('blog.isiexplore', $ex->slug ) }}"><img src="{{ $ex->gambar }}"/></a>
             </div>
             <!--text--------->

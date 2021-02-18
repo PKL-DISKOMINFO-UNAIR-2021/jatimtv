@@ -44,7 +44,9 @@
               <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-globe"></i> <span>Explore</span></a>
               <ul class="dropdown-menu">
                 <li><a class="nav-link" href="{{ route('explore.index') }}">List Explore</a></li> 
-                <li><a class="nav-link" href="{{ route('explore.tampil_hapus') }}">List Explore Dihapus</a></li>              
+                <li><a class="nav-link" href="{{ route('explore.tampil_hapus') }}">List Explore Dihapus</a></li>
+                <li><a class="nav-link" href="{{ route('bannerexplore.index') }}">List Banner Explore</a></li>              
+              
               </ul>
             </li>
             <li class="dropdown">

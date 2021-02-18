@@ -66,7 +66,7 @@
         <a class="showcase-heading-kanan" href="{{ route('blog.newrelease') }}" style="float:right;">VIEW ALL</a>
 
         <ul id="autoWidth" class="cs-hidden">
-		@foreach ($datas ['data'] as $nr)
+		@foreach ($datas ['tags_newrelease'] as $nr)
        		<!--box-1--------------------------->
         	<li class="item-a">
             	<!--showcase-box------------------->
@@ -111,12 +111,12 @@
     </section>
     
     <section id="movies-list">
-        @foreach ($datas ['data4'] as $e)
+        @foreach ($datas ['tags_explore'] as $e)
         <!--box-1------------------------>
         <div class="movies-box">
             <!--img------------>
             <div class="movies-img">
-                <div class="quality">{{ $e->category->name }}</div>
+                <div class="quality">{{ $e->name }}</div>
                 <a href="{{ route('blog.isiexplore', $e->slug ) }}"><img src="{{ $e->gambar }}"></a>
             </div>
             <!--text--------->
@@ -128,27 +128,26 @@
     </section>
     
     <!--PLAYLIST-->
+    <!--movies---------------------------->
     <section id="top">
     <a class="latest-heading">PLAYLIST</a>
-    <a class="showcase-heading-kanan" href="/explore" style="float:right;">VIEW ALL</a>
+    <a class="showcase-heading-kanan" href="{{ route('blog.explore') }}" style="float:right;">VIEW ALL</a>
     </section>
     
     <section id="movies-list">
-        <!-- category widget -->
-		<div class="aside-widget">
-			<div class="section-title">
-				<h2 class="title">Categories</h2>
-			</div>
-			<div class="category-widget">
-				<ul>
-					@foreach($category_widget as $hasil)
-						<li><a href="{{ route('blog.category', $hasil->slug) }}">{{ $hasil->name }}<span>{{ $hasil->posts->count() }}</span></a></li>
-                        <li><a href="{{ route('blog.category', $hasil->slug) }}">{{ $hasil->name }}<span>{{ $hasil->explores->count() }}</span></a></li>
-					@endforeach
-				</ul>
-			</div>
-		</div>
-		<!-- /category widget --> 
+        @foreach ($category_widget as $e)
+        <!--box-1------------------------>
+        <div class="movies-box">
+            <!--img------------>
+            <div class="movies-img">
+                <div class="quality">{{ $e->name }}</div>
+            </div>
+            <!--text--------->
+            <a href="{{ route('blog.isiexplore', $e->slug ) }}">
+            {{ $e->name}}
+            </a>
+        </div>
+        @endforeach
     </section>
     <script>
         $(document).ready(function() {

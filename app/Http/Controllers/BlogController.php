@@ -10,14 +10,40 @@ use App\Category;
 use App\Carousels;
 use App\Abouts;
 use App\Bannernewrelease;
-
+use Illuminate\Support\Facades\DB;
 class BlogController extends Controller
 {
     public function index(Posts $posts, Channel $channels, explores $explore, Carousels $carousel, Bannernewrelease $bannernewrelease){
         $category_widget = Category::all();
+        $posts = DB::table('posts')->get();
+        $tags = DB::table('tags')->get();
+        $tags_newrelease = DB::table('posts_tags')
+                    ->where('tags_id','=','1')
+                    ->join('posts','posts_tags.posts_id','=','posts.id')
+                    ->join('tags','posts_tags.tags_id','=','tags.id')
+                    ->select('posts.judul','posts.category_id','posts.content','posts.gambar','posts.slug','tags.name')
+                    ->get();
+        $tags_explore = DB::table('posts_tags')
+                    ->where('tags_id','=','2')
+                    ->join('posts','posts_tags.posts_id','=','posts.id')
+                    ->join('tags','posts_tags.tags_id','=','tags.id')
+                    ->select('posts.judul','posts.category_id','posts.content','posts.gambar','posts.slug','tags.name')
+                    ->get();
+        $playlist1 = DB::table('posts')
+                    ->where('category_id','=','1')
+                    ->join('category','posts.category_id','=','category.id')
+                    ->select('posts.judul','posts.gambar','category.name','posts.slug','posts.content')
+                    ->get();
+        $playlist2 = DB::table('posts')
+                    ->where('category_id','=','2')
+                    ->join('category','posts.category_id','=','category.id')
+                    ->select('posts.judul','posts.gambar','category.name','posts.slug','posts.content')
+                    ->get();
         $datas = [
-            'data' => $posts->oldest()->take(5)->get(),
-            'data2' => $posts->latest()->take(7)->get(),
+            'playlist1'=>$playlist1,
+            'playlist2'=>$playlist2,
+            'tags_newrelease'=> $tags_newrelease,
+            'tags_explore'=> $tags_explore,
             'data3' => $channels->latest()->take(7)->get(),
             'data4' => $explore->latest()->take(3)->get(),
             'data5' => $carousel->latest()->take(5)->get(),

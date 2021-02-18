@@ -6,7 +6,7 @@
 @section('nav')
 <div class="nav-items">
     <li><a href="{{ route('blog') }}">HOME</a></li>
-    <li><a href="/explore">EXPLORE</a></li>
+    <li><a href="{{ route('blog.explore') }}">EXPLORE</a></li>
     <li><a class="active"href="{{ route('blog.newrelease') }}">NEW RELEASE</a></li>
     <li><a href="{{ route('blog.about') }}">ABOUT</a></li>
 </div>

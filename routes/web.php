@@ -54,6 +54,7 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::resource('/about', 'AboutsController');
 	Route::resource('/carousel', 'CarouselsController');
 	Route::resource('/bannernewrelease', 'BannernewreleaseController');
+	Route::resource('/bannerexplore', 'BannerexploreController');
 
 });
 

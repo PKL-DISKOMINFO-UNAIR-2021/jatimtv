@@ -143,7 +143,7 @@
                 <div class="quality">{{ $e->name }}</div>
             </div>
             <!--text--------->
-            <a href="{{ route('blog.playlist', $e->slug) }}">
+            <a href="{{ route('blog.category', $e->slug) }}">
             {{ $e->name}}
             </a>
         </div>

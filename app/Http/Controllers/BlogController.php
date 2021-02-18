@@ -79,21 +79,16 @@ class BlogController extends Controller
         
     	return view('blog.explore', compact('tags_explore','category_widget', 'banner',));
     }
-
-    public function isi_playlist(Posts $posts, Bannernewrelease $bannernewrelease){
-        $category_widget = Category::all();
-        $playlist1 = DB::table('posts')
-                
-                    ->join('category','posts.category_id','=','category.id')
-                    ->select('category.name','posts.*')
-                    ->get();
-        $data = [
-            'playlist1'=>$playlist1,
-            'data6' => $bannernewrelease->latest()->take(1)->get(),
-        ];
-    	return view('blog.playlist', compact('data','category_widget','playlist1'));
-    }
    
+    public function list_category(category $category, Bannernewrelease $bannernewrelease){
+        $category_widget = Category::all();
+
+        $banner = $bannernewrelease->latest()->take(1)->get();
+        $data = $category->posts()->paginate(100);
+
+        return view('blog.playlist', compact('data','category_widget','banner'));
+    }
+
     public function about(){
         $about = Abouts::all();
     	return view('blog.about', compact('about'));
@@ -103,7 +98,7 @@ class BlogController extends Controller
     public function isi_blog($slug, Posts $posts, Bannernewrelease $bannernewrelease){
         $category_widget = Category::all();
         $datas = [
-            'data' => $posts->oldest()->take(5)->get(),
+            'data' => $posts->take(5)->get(),
             'data2' => Posts::where('slug', $slug)->get(),
             'data6' => $bannernewrelease->latest()->take(1)->get(),
         ];

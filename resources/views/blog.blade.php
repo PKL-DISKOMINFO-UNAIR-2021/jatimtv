@@ -38,7 +38,7 @@
                 ?>
             <div class="carousel-item <?= $active; ?>">
                 <img class="d-block w-100" src="{{$caro->gambar}}">
-                    <div class="carousel-caption d-none d-md-block">
+                    <div class="carousel-caption ">
                         <h2> <span class="font-weight-bold">{!!$caro->title!!}</span></h5>
                         <p>{!!$caro->content!!}</p>
                         <p class="lead">

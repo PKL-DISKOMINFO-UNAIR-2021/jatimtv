@@ -20,24 +20,24 @@ class BlogController extends Controller
         $posts = DB::table('posts')->get();
         $tags = DB::table('tags')->get();
         $tags_newrelease = DB::table('posts_tags')
-                    ->where('tags_id','=','1')
+                    ->where('tags_id','=','2')
                     ->join('posts','posts_tags.posts_id','=','posts.id')
                     ->join('tags','posts_tags.tags_id','=','tags.id')
                     ->select('posts.*','tags.name')
                     ->latest()->take(5)->get();
         $tags_explore = DB::table('posts_tags')
-                    ->where('tags_id','=','2')
+                    ->where('tags_id','=','3')
                     ->join('posts','posts_tags.posts_id','=','posts.id')
                     ->join('tags','posts_tags.tags_id','=','tags.id')
                     ->select('posts.*','tags.name')
                     ->latest()->take(3)->get();
         $playlist1 = DB::table('posts')
-                    ->where('category_id','=','1')
+                    ->where('category_id','=','2')
                     ->join('category','posts.category_id','=','category.id')
                     ->select('posts.*','category.name')
                     ->get();
         $playlist2 = DB::table('posts')
-                    ->where('category_id','=','1')
+                    ->where('category_id','=','3')
                     ->join('category','posts.category_id','=','category.id')
                     ->select('posts.*','category.name')
                     ->get();
@@ -56,7 +56,7 @@ class BlogController extends Controller
     public function index2(Posts $posts, Bannernewrelease $bannernewrelease){
         $category_widget = Category::all();
         $tags_newrelease = DB::table('posts_tags')
-                    ->where('tags_id','=','1')
+                    ->where('tags_id','=','2')
                     ->join('posts','posts_tags.posts_id','=','posts.id')
                     ->join('tags','posts_tags.tags_id','=','tags.id')
                     ->select('posts.*','tags.name')
@@ -70,7 +70,7 @@ class BlogController extends Controller
     public function index3(explores $explore, Bannerexplore $bannerexplore){
         $category_widget = Category::all();
         $tags_explore = DB::table('posts_tags')
-                    ->where('tags_id','=','2')
+                    ->where('tags_id','=','3')
                     ->join('posts','posts_tags.posts_id','=','posts.id')
                     ->join('tags','posts_tags.tags_id','=','tags.id')
                     ->select('posts.*','tags.name')

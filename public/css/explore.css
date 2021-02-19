@@ -12,9 +12,15 @@ a{
     padding-top: 80px;
     background-color: #ffffff;
 }
-
-.carousel-item {
-    height: 400px;
+.carousel-item p {
+    margin: -5px;
+}
+.carousel-item p a {
+ margin-top: 35px;
+}
+.carousel-item img{
+ width: 100%;
+ height: auto;
 }
 .movies-heading h2{
     font-weight: 400;
@@ -173,6 +179,35 @@ nav .menu-btn{
         display: block;
     }
 }
+@media(max-width:810px){
+    .carousel-item{
+        margin-top: 20px;
+    }
+    .carousel-item h2{
+        font-size: 15px;
+    }
+    .carousel-item p{
+        font-size: 10px;
+    }
+    .carousel-item p a{
+        font-size: 7px;
+    }
+}
+@media(max-width:767px){
+    .carousel-item{
+        margin-top: 50px;
+    }
+    .carousel-item h2{
+        font-size: 15px;
+    }
+    .carousel-item p{
+        font-size: 10px;
+    }
+    .carousel-item p a{
+        font-size: 7px;
+    }
+}
+
 @media(max-width:680px){
     .showcase-box{
         max-width: 300px;
@@ -191,5 +226,43 @@ nav .menu-btn{
     .movies-box a{
         width:65%;
     }
+}
 
+@media(max-width:560px){
+    .carousel-item{
+        margin-top: 70px;
+    }
+    .carousel-item h2{
+        font-size: 10px;
+    }
+    .carousel-item p{
+        font-size: 6px;
+    }
+    .carousel-item p a{
+        font-size: 4px;
+    }
+}
+@media(max-width:440px){
+    .carousel-item p a{
+        margin-top: 10px;
+    }
+    .carousel-control-prev{
+        margin-top: 50px;
+    }
+    .carousel-control-next{
+        margin-top: 50px;
+    }
+    .movies-box a,.movies-box{
+        width: 100%;
+    }
+    .movies-box{
+        flex-direction: column;
+    }
+    .logo img{
+        height: 30px;
+    }
+    .search{
+        width: 90%;
+        height: 40px;
+    }
 }

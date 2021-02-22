@@ -120,9 +120,11 @@
                 <a href="{{ route('blog.isi', $e->slug ) }}"><img src="{{ $e->gambar }}"></a>
             </div>
             <!--text--------->
-            <a href="{{ route('blog.isi', $e->slug ) }}">
-            {{ $e->judul}}
-            </a>
+            
+                <a href="{{ route('blog.isi', $e->slug ) }}">
+                {{ $e->judul}}
+                </a>
+            </div>
         </div>
         @endforeach
     </section>
@@ -131,7 +133,6 @@
     <!--movies---------------------------->
     <section id="top">
     <a class="latest-heading">PLAYLIST</a>
-    <a class="showcase-heading-kanan" href="{{ route('blog.explore') }}" style="float:right;">VIEW ALL</a>
     </section>
     
     <section id="movies-list">

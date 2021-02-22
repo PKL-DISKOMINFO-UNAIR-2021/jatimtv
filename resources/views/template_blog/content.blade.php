@@ -57,7 +57,7 @@
  
  <div class="footer-left">
 
-   <img src="{{ asset('public/img/logo.png')}}" href="{{ route('blog') }}">
+   <a href="{{ route('blog') }}"><img src="{{ asset('public/img/logo.png')}}"></a>
 
        <p class="footer-links">
        <a href="{{ route('blog') }}">Home</a>

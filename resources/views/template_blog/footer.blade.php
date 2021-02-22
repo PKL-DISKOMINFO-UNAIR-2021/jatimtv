@@ -2,7 +2,7 @@
  
  <div class="footer-left">
 
-   <img src="img/logo.png" href="{{ route('blog') }}">
+  <a href="{{ route('blog') }}"> <img src="img/logo.png" ></a>
 
        <p class="footer-links">
        <a href="/">Home</a>

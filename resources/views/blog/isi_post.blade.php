@@ -18,7 +18,9 @@
 		
             <div class="col">
 			@foreach($datas ['data2'] as $isi_post)
+                
                 <div class="feature-img">
+                <h2>{!! $isi_post->judul !!}</h2>
 					{!! $isi_post->content !!}
                 </div>
 				@endforeach

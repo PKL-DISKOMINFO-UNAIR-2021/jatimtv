@@ -1,6 +1,6 @@
 @extends('template_blog.content')
 @section('linkcss')
-<link rel="stylesheet" href="{{ asset('public/css/newrelease.css') }}">
+
 @endsection
 @section('title','Playlist')
 @section('nav')

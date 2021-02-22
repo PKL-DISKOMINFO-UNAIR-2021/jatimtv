@@ -16,6 +16,7 @@
 			<tr>
 				<th>No</th>
 				<th>Nama Kategori</th>
+				<th>Gambar</th>
 				<th>Action</th>
 			</tr>
 		</thead>
@@ -23,7 +24,9 @@
 			@foreach ($category as $result => $hasil)
 			<tr>
 				<td>{{ $result + $category->firstitem() }}</td>
-				<td>{{ $hasil->name }}</td>
+				<td>{{ $hasil -> name }}</td>
+				<td><img src="{{ asset( $hasil->gambar ) }}" class="img-fluid" style="width:100px"></td>
+
 				<td>
 					<form action="{{ route('category.destroy', $hasil->id )}}" method="POST">
 						@csrf

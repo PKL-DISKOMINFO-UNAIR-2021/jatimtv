@@ -142,6 +142,8 @@
             <!--img------------>
             <div class="movies-img">
                 <div class="quality">{{ $e->name }}</div>
+                <a href="{{ route('blog.category', $e->slug ) }}"><img src="{{ $e->gambar }}"></a>
+
             </div>
             <!--text--------->
             <a href="{{ route('blog.category', $e->slug) }}">

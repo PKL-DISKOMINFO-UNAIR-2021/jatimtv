@@ -99,7 +99,7 @@ class CarouselsController extends Controller
             $new_gambar = time().$gambar->getClientOriginalName();
             $gambar->move('public/uploads/posts/', $new_gambar);
 
-        $carousel_data = [
+            $carousel_data = [
             'title' => $request->title,
             'content' =>  $request->content,
             'gambar' => 'public/uploads/posts/'.$new_gambar,

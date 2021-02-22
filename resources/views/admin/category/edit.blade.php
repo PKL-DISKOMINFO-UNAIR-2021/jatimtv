@@ -17,18 +17,24 @@
   	
   @endif
 
-  <form action="{{ route('category.update' , $category->id ) }}" method="POST">
+  <form action="{{ route('category.update' , $category->id ) }}" method="POST" enctype="multipart/form-data">
   @csrf
   @method('PUT')
   <div class="form-group">
       <label>Kategori</label>
       <input type="text" class="form-control" name="name" value="{{ $category->name }}">
   </div>
-
+  <div class="form-group">
+      <label>Thumbnail</label>
+      <input type="file" name="gambar" class="form-control">
+  </div>
   <div class="form-group">
       <button class="btn btn-primary btn-block">Update Kategori</button>
   </div>
+  <script >
+  CKEDITOR.replace( 'content' );
 
+</script>
   </form>
 
 

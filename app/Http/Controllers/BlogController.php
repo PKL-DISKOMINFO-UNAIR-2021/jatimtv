@@ -19,13 +19,13 @@ class BlogController extends Controller
         $posts = DB::table('posts')->get();
         $tags = DB::table('tags')->get();
         $tags_newrelease = DB::table('posts_tags')
-                    ->where('tags_id','=','2')
+                    ->where('tags_id','=','1')
                     ->join('posts','posts_tags.posts_id','=','posts.id')
                     ->join('tags','posts_tags.tags_id','=','tags.id')
                     ->select('posts.*','tags.name')
                     ->latest()->take(5)->get();
         $tags_explore = DB::table('posts_tags')
-                    ->where('tags_id','=','3')
+                    ->where('tags_id','=','2')
                     ->join('posts','posts_tags.posts_id','=','posts.id')
                     ->join('tags','posts_tags.tags_id','=','tags.id')
                     ->select('posts.*','tags.name')
@@ -55,7 +55,7 @@ class BlogController extends Controller
     public function index2(Posts $posts, Bannernewrelease $bannernewrelease){
         $category_widget = Category::all();
         $tags_newrelease = DB::table('posts_tags')
-                    ->where('tags_id','=','2')
+                    ->where('tags_id','=','1')
                     ->join('posts','posts_tags.posts_id','=','posts.id')
                     ->join('tags','posts_tags.tags_id','=','tags.id')
                     ->select('posts.*','tags.name')
@@ -69,7 +69,7 @@ class BlogController extends Controller
     public function index3(Bannerexplore $bannerexplore){
         $category_widget = Category::all();
         $tags_explore = DB::table('posts_tags')
-                    ->where('tags_id','=','3')
+                    ->where('tags_id','=','2')
                     ->join('posts','posts_tags.posts_id','=','posts.id')
                     ->join('tags','posts_tags.tags_id','=','tags.id')
                     ->select('posts.*','tags.name')
@@ -97,7 +97,7 @@ class BlogController extends Controller
     public function isi_blog($slug, Posts $posts, Bannernewrelease $bannernewrelease){
         $category_widget = Category::all();
         $datas = [
-            'data' => $posts->take(5)->get(),
+            'data' => $posts->latest()->take(5)->get(),
             'data2' => Posts::where('slug', $slug)->get(),
             'data6' => $bannernewrelease->latest()->take(1)->get(),
         ];

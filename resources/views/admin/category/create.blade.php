@@ -17,18 +17,27 @@
   	
   @endif
 
-  <form action="{{ route('category.store') }}" method="POST">
+  <form action="{{ route('category.store') }}" method="POST" enctype="multipart/form-data">
   @csrf
   <div class="form-group">
       <label>Kategori</label>
       <input type="text" class="form-control" name="name">
   </div>
+  <div class="form-group">
+      <label>Thumbnail</label>
+      <input type="file" name="gambar" class="form-control">
+  </div>
+
 
   <div class="form-group">
       <button class="btn btn-primary btn-block">Simpan Kategori</button>
   </div>
 
   </form>
+  <script src="{{ asset('public/ckeditor/ckeditor.js')}}"></script>
+  <script >
+  CKEDITOR.replace( 'content' );
 
+</script>
 
 @endsection

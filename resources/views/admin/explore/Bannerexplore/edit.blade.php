@@ -29,15 +29,13 @@
       <label>IMAGE</label>
       <input type="file" name="gambar" class="form-control">
   </div>
-  
-
   <div class="form-group">
       <button class="btn btn-primary btn-block">Update Banner</button>
   </div>
 
   </form>
   <script src="{{ asset('public/ckeditor/ckeditor.js')}}"></script>
-<script >
+  <script >
   CKEDITOR.replace( 'content' );
 
 </script>

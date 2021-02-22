@@ -26,7 +26,8 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('admin.category.create');
+        $category = Category::all();
+        return view('admin.category.create', compact('category'));
     }
 
     /**
@@ -38,15 +39,19 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required|min:3'
+            'name' => 'required|min:3',
+            'gambar' => 'required',
         ]);
-
+        $gambar = $request->gambar;
+        $new_gambar = time().$gambar->getClientOriginalName();
 
         $category = Category::create([
             'name' => $request->name,
-            'slug' => Str::slug($request->name)
+            'slug' => Str::slug($request->name),
+            'gambar' => 'public/uploads/playlist/'.$new_gambar,
         ]);
 
+        $gambar->move('public/uploads/playlist/', $new_gambar);
         return redirect()->back()->with('success','Ketegori berhasil disimpan');
     }
 
@@ -83,17 +88,28 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request, [
-            'name' => 'required'
-        ]);
+       
+        $category = Category::findorfail($id);
 
+        if ($request->has('gambar')) {
+            $gambar = $request->gambar;
+            $new_gambar = time().$gambar->getClientOriginalName();
+            $gambar->move('public/uploads/playlist/', $new_gambar);
+
+            $category_data = [
+            'name' => $request->name,
+            'slug' => Str::slug($request->name),
+            'gambar' => 'public/uploads/playlist/'.$new_gambar
+
+        ];
+        }
+        else{
         $category_data = [
             'name' => $request->name,
             'slug' => Str::slug($request->name)
-        ];
-
-        Category::whereId($id)->update($category_data);
-
+            ];
+        }
+        $category->update($category_data);
         return redirect()->route('category.index')->with('success','Data Berhasil di Update');
 
     }

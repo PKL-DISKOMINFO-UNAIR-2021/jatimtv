@@ -22,8 +22,7 @@
   <div class="form-group">
       <label>TITTLE</label>
       <input type="text" class="form-control" name="title" >
-  </div>
-  
+  </div> 
   <div class="form-group">
       <label>IMAGE</label>
       <input type="file" name="gambar" class="form-control">

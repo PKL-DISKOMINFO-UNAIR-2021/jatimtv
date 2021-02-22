@@ -57,16 +57,16 @@
  
  <div class="footer-left">
 
-   <img src="{{ asset('public/img/logo.png')}}" href="/">
+   <img src="{{ asset('public/img/logo.png')}}" href="{{ route('blog') }}">
 
        <p class="footer-links">
-       <a href="/">Home</a>
+       <a href="{{ route('blog') }}">Home</a>
      ·
-       <a href="/explore">Explore</a>
+       <a href="{{ route('blog.explore') }}">Explore</a>
      ·
-       <a href="/newrelease">New Release</a>
+       <a href="{{ route('blog.newrelease') }}">New Release</a>
      ·
-       <a href="/about">About</a>
+       <a href="{{ route('blog.about') }}">About</a>
        </p>
    
        <p class="footer-company-name">Kominfo-Jatim &copy; 2021</p>

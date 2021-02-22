@@ -1,7 +1,4 @@
 @extends('template_blog.content')
-@section('linkcss')
-<link rel="stylesheet" href="{{ asset('public/css/explore.css') }}">
-@endsection
 @section('title','newrelease')
 @section('nav')
 <div class="nav-items">

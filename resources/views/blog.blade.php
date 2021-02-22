@@ -133,7 +133,6 @@
     <!--movies---------------------------->
     <section id="top">
     <a class="latest-heading">PLAYLIST</a>
-    <a class="showcase-heading-kanan" href="{{ route('blog.explore') }}" style="float:right;">VIEW ALL</a>
     </section>
     
     <section id="movies-list">

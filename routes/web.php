@@ -17,7 +17,7 @@ Route::get('/', 'BlogController@index')->name('blog');
 Route::get('/newrelease', 'BlogController@index2')->name('blog.newrelease');
 Route::get('/abouts', 'BlogController@about')->name('blog.about');
 Route::get('/explorepage', 'BlogController@index3')->name('blog.explore');
-Route::get('/test', 'PostTagsController@index');
+
 /*Route::get('/isi_post', function(){
 	return view('blog.isi_post');
 });*/
@@ -44,10 +44,6 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('/post/restore/{id}', 'PostController@restore')->name('post.restore');
 	Route::delete('/post/kill/{id}', 'PostController@kill')->name('post.kill');
 	Route::resource('/post', 'PostController');
-
-	Route::get('/explore/tampil_hapus', 'exploresController@tampil_hapus')->name('explore.tampil_hapus');
-	Route::get('/explore/restore/{id}', 'exploresController@restore')->name('explore.restore');
-	Route::delete('/explore/kill/{id}', 'exploresController@kill')->name('explore.kill');
 	Route::resource('/explore', 'exploresController');
 
 	Route::resource('/user', 'UserController');

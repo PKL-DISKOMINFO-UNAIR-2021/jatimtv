@@ -71,7 +71,7 @@ class BannerexploreController extends Controller
     public function edit($id)
     {
         $bannerexplore = Bannerexplore::findorfail($id);
-        return view('admin.post.Bannerexplore.edit', compact('bannerexplore'));
+        return view('admin.explore.Bannerexplore.edit', compact('bannerexplore'));
 
     }
 

@@ -1,4 +1,10 @@
 @extends('template_blog.content')
+<<<<<<< HEAD
+=======
+@section('linkcss')
+
+@endsection
+>>>>>>> a85699f4e694446da15fc1f5974e3783ae711d4f
 @section('title','newrelease')
 @section('nav')
 <div class="nav-items">

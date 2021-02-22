@@ -17,7 +17,7 @@ Route::get('/', 'BlogController@index')->name('blog');
 Route::get('/newrelease', 'BlogController@index2')->name('blog.newrelease');
 Route::get('/abouts', 'BlogController@about')->name('blog.about');
 Route::get('/explorepage', 'BlogController@index3')->name('blog.explore');
-Route::get('/test', 'PostTagsController@index');
+
 /*Route::get('/isi_post', function(){
 	return view('blog.isi_post');
 });*/

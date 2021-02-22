@@ -44,10 +44,6 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('/post/restore/{id}', 'PostController@restore')->name('post.restore');
 	Route::delete('/post/kill/{id}', 'PostController@kill')->name('post.kill');
 	Route::resource('/post', 'PostController');
-
-	Route::get('/explore/tampil_hapus', 'exploresController@tampil_hapus')->name('explore.tampil_hapus');
-	Route::get('/explore/restore/{id}', 'exploresController@restore')->name('explore.restore');
-	Route::delete('/explore/kill/{id}', 'exploresController@kill')->name('explore.kill');
 	Route::resource('/explore', 'exploresController');
 
 	Route::resource('/user', 'UserController');

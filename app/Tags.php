@@ -15,7 +15,4 @@ class Tags extends Model
     public function channels(){
     	return $this->belongsToMany('App\Channels');
     }
-    public function explores(){
-    	return $this->belongsToMany('App\explores');
-    }
 }

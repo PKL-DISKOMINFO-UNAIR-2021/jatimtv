@@ -13,16 +13,9 @@
 @endsection
     @section('isi')
     
-    <!--Bannerr--> 
-    <div class="carousel-inner">
-        <div class="carousel-item active">
-            <img class="d-block w-100" src="{{ asset('public/img/bannerexplore.jpg') }}" alt="First slide">
-        </div>
-    </div>
-    
     <!--explore content---------------------------->
     <div class="movies-heading">
-        <h2>EXPLORE</h2>
+        <h2>RESULT</h2>
     </div>
     <section id="movies-list">
     @foreach ($data as $s)

@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Posts;
-use App\explores;
 use App\Channel;
 use App\Category;
 use App\Carousels;
@@ -15,7 +14,7 @@ use App\Bannerexplore;
 
 class BlogController extends Controller
 {
-    public function index(Posts $posts, Channel $channels, explores $explore, Carousels $carousel, Bannernewrelease $bannernewrelease){
+    public function index(Posts $posts, Channel $channels, Carousels $carousel, Bannernewrelease $bannernewrelease){
         $category_widget = Category::all();
         $posts = DB::table('posts')->get();
         $tags = DB::table('tags')->get();
@@ -67,7 +66,7 @@ class BlogController extends Controller
         ];
     	return view('blog.newrelease', compact('data','category_widget','tags_newrelease'));
     }
-    public function index3(explores $explore, Bannerexplore $bannerexplore){
+    public function index3(Bannerexplore $bannerexplore){
         $category_widget = Category::all();
         $tags_explore = DB::table('posts_tags')
                     ->where('tags_id','=','3')

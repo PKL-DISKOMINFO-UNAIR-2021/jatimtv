@@ -15,6 +15,7 @@
 
   <!-- Template CSS -->
   <link rel="stylesheet" href="{{ asset('public/assets/css/style.css')}}">
+  <link rel="stylesheet" href="{{ asset('public/assets/css/dashboard.css')}}">
   <link rel="stylesheet" href="{{ asset('public/assets/css/components.css')}}">
 <!-- Start GA -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-94034622-3"></script>
@@ -53,9 +54,6 @@
             <div class="d-sm-none d-lg-inline-block">Hi, {{ Auth::user()->name }}</div></a>
             <div class="dropdown-menu dropdown-menu-right">
        
-              <a href="features-profile.html" class="dropdown-item has-icon">
-                <i class="far fa-user"></i> Profile
-              </a>
        
               <div class="dropdown-divider"></div>
                   <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

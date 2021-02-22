@@ -31,12 +31,12 @@ class BlogController extends Controller
                     ->select('posts.*','tags.name')
                     ->latest()->take(3)->get();
         $playlist1 = DB::table('posts')
-                    ->where('category_id','=','2')
+                    ->where('category_id','=','1')
                     ->join('category','posts.category_id','=','category.id')
                     ->select('posts.*','category.name')
                     ->get();
         $playlist2 = DB::table('posts')
-                    ->where('category_id','=','3')
+                    ->where('category_id','=','2')
                     ->join('category','posts.category_id','=','category.id')
                     ->select('posts.*','category.name')
                     ->get();

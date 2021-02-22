@@ -120,9 +120,11 @@
                 <a href="{{ route('blog.isi', $e->slug ) }}"><img src="{{ $e->gambar }}"></a>
             </div>
             <!--text--------->
-            <a href="{{ route('blog.isi', $e->slug ) }}">
-            {{ $e->judul}}
-            </a>
+            
+                <a href="{{ route('blog.isi', $e->slug ) }}">
+                {{ $e->judul}}
+                </a>
+            </div>
         </div>
         @endforeach
     </section>

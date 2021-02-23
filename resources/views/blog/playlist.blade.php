@@ -15,13 +15,7 @@
     @section('isi')
     
     <!--Bannerr--> 
-    @foreach ($banner as $banner)
-    <div class="carousel-inner">
-        <div class="carousel-item active">
-            <img class="d-block w-100" src="../{{$banner->gambar}}" alt="First slide">
-        </div>
-    </div>
-    @endforeach
+    
     <!--explore content---------------------------->
     <div class="movies-heading">
         <h2>PLAYLIST</h2>

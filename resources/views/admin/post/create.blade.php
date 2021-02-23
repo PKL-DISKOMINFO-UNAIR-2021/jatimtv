@@ -21,11 +21,12 @@
   @csrf
   <div class="form-group">
       <label>Judul</label>
-      <input type="text" class="form-control" name="judul">
+      <input type="text" name="judul" class="form-control" value="{{ old('judul') }}">
+    
   </div>
   <div class="form-group">
       <label>Kategori</label>
-      <select class="form-control" name="category_id">
+      <select class="form-control" name="category_id" required="required">>
       	<option value="" holder>Pilih Kategori</option>
       	@foreach($category as $result)
       	<option value="{{ $result->id }}">{{  $result->name }}</option>
@@ -33,16 +34,17 @@
       </select>
   </div>
   <div class="form-group">
-      <label>Pilih Tags</label>
-      <select class="form-control select2" multiple="" name="tags[]">
+      <label>Pilih Konten</label>
+      <select class="form-control" name="tags">
+      <option value="" holder>Pilih Konten</option>
           @foreach($tags as $tag)
           <option value="{{ $tag->id }}">{{ $tag->name }}</option> 
           @endforeach
       </select>
   </div>
   <div class="form-group">
-      <label>Konten</label>
-      <textarea class="form-control" name="content" id="content"></textarea>
+      <label>Isi Post</label>
+      <textarea class="form-control" name="content" id="content" value="{{ old('content') }}"></textarea>
   </div>
   <div class="form-group">
       <label>Thumbnail</label>

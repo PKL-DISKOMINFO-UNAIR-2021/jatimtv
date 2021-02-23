@@ -62,6 +62,9 @@ class PostController extends Controller
             'users_id' => Auth::id()
         ]);
 
+        $judul = $request->old('judul');
+        $content = $request->old('content');
+
         $post->tags()->attach($request->tags);
 
         $gambar->move('public/uploads/posts/', $new_gambar);

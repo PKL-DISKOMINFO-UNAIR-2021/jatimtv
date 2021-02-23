@@ -23,9 +23,9 @@
               </ul>
             </li>
             <li class="dropdown">
-              <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="far fa-clipboard"></i> <span>Kategori</span></a>
+              <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="far fa-clipboard"></i> <span>Playlist</span></a>
               <ul class="dropdown-menu">
-                <li><a class="nav-link" href="{{ route('category.index') }}">List Kategori</a></li>            
+                <li><a class="nav-link" href="{{ route('category.index') }}">List Playlist</a></li>            
               </ul>
             </li>
             <li class="dropdown">

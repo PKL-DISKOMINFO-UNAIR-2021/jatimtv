@@ -21,7 +21,7 @@
   @csrf
   <div class="form-group">
       <label>Judul</label>
-      <input type="text" name="judul" class="form-control">
+      <input type="text" name="judul" class="form-control" value="{{ old('judul') }}">
     
   </div>
   <div class="form-group">

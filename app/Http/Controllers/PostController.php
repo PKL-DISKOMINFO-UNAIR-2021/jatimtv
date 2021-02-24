@@ -63,6 +63,7 @@ class PostController extends Controller
         ]);
 
         $judul = $request->old('judul');
+        $category_id = $request->old('category_id');
         $content = $request->old('content');
 
         $post->tags()->attach($request->tags);

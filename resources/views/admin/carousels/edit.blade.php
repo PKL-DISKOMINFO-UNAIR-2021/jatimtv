@@ -25,6 +25,10 @@
       <input type="text" class="form-control" name="title" value="{!! $carousel->title !!}">
   </div>
   <div class="form-group">
+      <label>LINK</label>
+      <input type="text" class="form-control" name="link" value="{{ $carousel->link }}">
+  </div>
+  <div class="form-group">
       <label>CONTENT</label>
       <textarea class="form-control" name="content" id="content">{!! $carousel->content !!}</textarea>
   </div>
@@ -32,10 +36,7 @@
       <label>IMAGE</label>
       <input type="file" name="gambar" class="form-control">
   </div>
-  <div class="form-group">
-      <label>LINK</label>
-      <input type="text" class="form-control" name="link" value="{{ $carousel->link }}">
-  </div>
+  
 
   <div class="form-group">
       <button class="btn btn-primary btn-block">Update Carousel</button>

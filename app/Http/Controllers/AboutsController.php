@@ -36,6 +36,11 @@ class AboutsController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'content' => 'required',
+            'title_address' => 'required',
+            'content_address' => 'required'
+        ]);
         
         Abouts::create([
             'title' => $request->judul,

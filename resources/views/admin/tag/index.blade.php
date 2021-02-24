@@ -1,5 +1,5 @@
 @extends('template_backend.home')
-@section('sub-judul','Tag')
+@section('sub-judul','Konten')
 @section('content')
 
     @if(Session::has('success'))
@@ -8,14 +8,14 @@
 	</div> 
 	@endif
 
-	<a href="{{ route('tag.create') }}" class="btn btn-info btn-sm">Tambah Tag</a>
+	<a href="{{ route('tag.create') }}" class="btn btn-info btn-sm">Tambah Konten</a>
 	<br><br>
 
 	<table class="table table-striped table-hover table-sm table-bordered">
 		<thead>
 			<tr>
 				<th>No</th>
-				<th>Nama Tag</th>
+				<th>Nama Konten</th>
 				<th>Action</th>
 			</tr>
 		</thead>

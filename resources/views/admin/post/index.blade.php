@@ -17,7 +17,7 @@
 				<th>No</th>
 				<th>Nama Post</th>
 				<th>Kategori</th>
-				<th>Daftar Tags</th>
+				<th>Daftar Konten</th>
 				<th>Creator</th>
 				<th>Thumbnail</th>
 				<th>Action</th>

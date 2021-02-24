@@ -1,5 +1,5 @@
 @extends('template_backend.home')
-@section('sub-judul','Tambah Post')
+@section('sub-judul','Tambah About')
 @section('content')
 
   @if(count($errors)>0)
@@ -21,19 +21,19 @@
   @csrf
   <div class="form-group">
       <label>TITTLE</label>
-      <input type="text" class="form-control" name="judul" >
+      <input type="text" class="form-control" name="judul" value="{{ old('judul') }}" required="required" Placeholder="Masukkan Judul"  >
   </div>
   <div class="form-group">
       <label>CONTENT</label>
-      <textarea class="form-control" name="content" id="content"></textarea>
+      <textarea class="form-control" name="content" id="content">{{ old('content') }}</textarea>
   </div>
   <div class="form-group">
       <label>TITTLE_ADDRESS</label>
-      <input type="text" class="form-control" name="judul2" >
+      <input type="text" class="form-control" name="judul2" value="{{ old('judul2') }}"  Placeholder="Masukkan Judul Alamat" >
   </div>
   <div class="form-group">
       <label>CONTENT_ADDRESS</label>
-      <textarea class="form-control" name="content2" id="content2"></textarea>
+      <textarea class="form-control" name="content2" id="content2">{{ old('content2') }}</textarea>
   </div>
   
 

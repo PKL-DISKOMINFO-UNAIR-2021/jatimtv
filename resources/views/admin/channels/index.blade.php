@@ -1,5 +1,5 @@
 @extends('template_backend.home')
-@section('sub-judul','Post')
+@section('sub-judul','Cahnnel')
 @section('content')
 
     @if(Session::has('success'))
@@ -8,7 +8,7 @@
 	</div> 
 	@endif
 
-	<a href="{{ route('channels.create') }}" class="btn btn-info btn-sm">TambahC</a>
+	<a href="{{ route('channels.create') }}" class="btn btn-info btn-sm">Tambah Channel</a>
 	<br><br>
 
 	<table class="table table-striped table-hover table-sm table-bordered">

@@ -1,5 +1,5 @@
 @extends('template_backend.home')
-@section('sub-judul','Tambah Kategori')
+@section('sub-judul','Tambah Playlist')
 @section('content')
 
   @if(count($errors)>0)
@@ -20,12 +20,12 @@
   <form action="{{ route('category.store') }}" method="POST" enctype="multipart/form-data">
   @csrf
   <div class="form-group">
-      <label>Kategori</label>
-      <input type="text" class="form-control" name="name">
+      <label>Playlist</label>
+      <input type="text" class="form-control" name="name" required="required" value="{{ old('name') }}" placeholder="Masukkan Nama Playlist">
   </div>
   <div class="form-group">
       <label>Thumbnail</label>
-      <input type="file" name="gambar" class="form-control">
+      <input type="file" name="gambar" class="form-control" required="required">
   </div>
 
 

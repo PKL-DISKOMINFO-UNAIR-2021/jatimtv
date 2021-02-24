@@ -1,5 +1,5 @@
 @extends('template_backend.home')
-@section('sub-judul','Edit Tag')
+@section('sub-judul','Edit Konten')
 @section('content')
 
   @if(count($errors)>0)
@@ -21,12 +21,12 @@
   @csrf
   @method('PUT')
   <div class="form-group">
-      <label>Tag</label>
+      <label>Konten</label>
       <input type="text" class="form-control" name="name" value="{{ $tags->name }}">
   </div>
 
   <div class="form-group">
-      <button class="btn btn-primary btn-block">Update Tag</button>
+      <button class="btn btn-primary btn-block">Update Konten</button>
   </div>
 
   </form>

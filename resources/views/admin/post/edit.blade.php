@@ -38,8 +38,8 @@
       </select>
   </div>
   <div class="form-group">
-      <label>Pilih Tags</label>
-      <select class="form-control select2" multiple="" name="tags[]">
+      <label>Pilih Konten</label>
+      <select class="form-control"  name="tags[]">
           @foreach($tags as $tag)
           <option value="{{ $tag->id }}"
           @foreach($post->tags as $value)
@@ -52,7 +52,7 @@
       </select>
   </div>
   <div class="form-group">
-      <label>Konten</label>
+      <label>Isi Post</label>
       <textarea class="form-control" name="content" id="content">{{ $post->content }}</textarea>
   </div>    
   <div class="form-group">

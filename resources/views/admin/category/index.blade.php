@@ -1,5 +1,5 @@
 @extends('template_backend.home')
-@section('sub-judul','Kategori')
+@section('sub-judul','Playlist')
 @section('content')
 
     @if(Session::has('success'))
@@ -8,7 +8,7 @@
 	</div> 
 	@endif
 
-	<a href="{{ route('category.create') }}" class="btn btn-info btn-sm">Tambah Kategori</a>
+	<a href="{{ route('category.create') }}" class="btn btn-info btn-sm">Tambah Playlist</a>
 	<br><br>
 
 	<table class="table table-striped table-hover table-sm table-bordered">

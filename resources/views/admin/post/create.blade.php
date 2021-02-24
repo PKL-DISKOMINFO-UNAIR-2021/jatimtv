@@ -21,36 +21,36 @@
   @csrf
   <div class="form-group">
       <label>Judul</label>
-      <input type="text" name="judul" class="form-control" value="{{ old('judul') }}">
+      <input type="text" name="judul" class="form-control" value="{{ old('judul') }}" required="required" placeholder="Masukkan Judul">
     
   </div>
   <div class="form-group">
-      <label>Kategori</label>
-      <select class="form-control" name="category_id" required="required">>
-      	<option value="" holder>Pilih Kategori</option>
+      <label >Kategori</label>
+      <select class="form-control" name="category_id[]" id="category_id"required="required">
+      	<option value="" disabled selected >Pilih Kategori</option>
       	@foreach($category as $result)
-      	<option value="{{ $result->id }}">{{  $result->name }}</option>
+      	<option value="{{ $result->id }}"  {{ (collect(old('category_id'))->contains($result->id)) ? 'selected':'' }} >{{  $result->name }}</option>
       	@endforeach
       </select>
   </div>
   <div class="form-group">
       <label>Pilih Konten</label>
-      <select class="form-control" name="tags">
-      <option value="" holder>Pilih Konten</option>
+      <select class="form-control" name="tags[]" id="tags"required="required">
+      <option value="" disabled selected >Pilih Konten</option>
           @foreach($tags as $tag)
-          <option value="{{ $tag->id }}">{{ $tag->name }}</option> 
+          <option value="{{ $tag->id }}" {{ (collect(old('tags'))->contains($tag->id)) ? 'selected':'' }}>{{ $tag->name }}</option> 
           @endforeach
       </select>
   </div>
+  
   <div class="form-group">
-      <label>Isi Post</label>
-      <textarea class="form-control" name="content" id="content" value="{{ old('content') }}"></textarea>
+      <label for=>Isi Post</label>
+      <textarea class="form-control" required="required" name="content" id="content" value="{{ old('content') }}"> {{ old('content') }} </textarea>
   </div>
   <div class="form-group">
       <label>Thumbnail</label>
       <input type="file" name="gambar" class="form-control">
   </div>
-
   <div class="form-group">
       <button class="btn btn-primary btn-block">Simpan Post</button>
   </div>

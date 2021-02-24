@@ -1,5 +1,5 @@
 @extends('template_backend.home')
-@section('sub-judul','Tambah Post')
+@section('sub-judul','Tambah Channel')
 @section('content')
 
   @if(count($errors)>0)
@@ -21,17 +21,17 @@
   @csrf
   <div class="form-group">
       <label>Judul</label>
-      <input type="text" class="form-control" name="judul">
+      <input type="text" class="form-control" name="judul" value="{{ old('judul') }}" required="required" Placeholder="Masukkan Judul Channel">
   </div>
   <div class="form-group">
       <label>Url - Channel</label>
-      <input type="text" class="form-control" name="url_channel">
+      <input type="text" class="form-control" name="url_channel" required="required" Placeholder="Masukkan Link Url">
 
   </div>
   
   <div class="form-group">
       <label>Thumbnail</label>
-      <input type="file" name="gambar" class="form-control">
+      <input type="file" name="gambar" class="form-control" required="required" >
   </div>
 
   <div class="form-group">

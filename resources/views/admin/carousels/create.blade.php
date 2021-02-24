@@ -21,20 +21,21 @@
   @csrf
   <div class="form-group">
       <label>TITTLE</label>
-      <input type="text" class="form-control" name="title" >
+      <input type="text" class="form-control" name="title" value="{{ old('title') }}" required="required" Placeholder="Masukkan Tittle Carousel" >
+  </div>
+  <div class="form-group">
+      <label>LINK</label>
+      <input type="text" class="form-control" name="link"value="{{ old('link') }}"required="required" Placeholder="Masukkan Link">
   </div>
   <div class="form-group">
       <label>CONTENT</label>
-      <textarea class="form-control" name="content" id="content"></textarea>
+      <textarea class="form-control" name="content" id="content" required="required">{{ old('content') }}</textarea>
   </div>
   <div class="form-group">
       <label>IMAGE</label>
       <input type="file" name="gambar" class="form-control">
   </div>
-  <div class="form-group">
-      <label>LINK</label>
-      <input type="text" class="form-control" name="link" >
-  </div>
+  
 
   <div class="form-group">
       <button class="btn btn-primary btn-block">Tambah Informasi</button>

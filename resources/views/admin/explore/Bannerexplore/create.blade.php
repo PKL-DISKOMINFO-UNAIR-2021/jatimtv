@@ -1,5 +1,5 @@
 @extends('template_backend.home')
-@section('sub-judul','Tambah Post')
+@section('sub-judul','Tambah Banner Explore')
 @section('content')
 
   @if(count($errors)>0)
@@ -21,11 +21,11 @@
   @csrf
   <div class="form-group">
       <label>TITTLE</label>
-      <input type="text" class="form-control" name="title" >
+      <input type="text" class="form-control" name="title" value="{{ old('title') }}" required="required" Placeholder="Masukkan Title Banner">
   </div> 
   <div class="form-group">
       <label>IMAGE</label>
-      <input type="file" name="gambar" class="form-control">
+      <input type="file" name="gambar" class="form-control" required="required">
   </div>
 
 

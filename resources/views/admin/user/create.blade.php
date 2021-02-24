@@ -21,26 +21,26 @@
   @csrf
   <div class="form-group">
       <label>Nama User</label>
-      <input type="text" class="form-control" name="name">
+      <input type="text" class="form-control" name="name" value="{{ old('name') }}" required="required" Placeholder="Masukkan Nama User">
   </div>
 
   <div class="form-group">
       <label>Email</label>
-      <input type="email" class="form-control" name="email">
+      <input type="email" class="form-control" name="email" value="{{ old('email') }}" required="required" Placeholder="Masukkan Email">
   </div>
 
   <div class="form-group">
       <label>Tipe User</label>
-      <select class="form-control" name="tipe">
+      <select class="form-control" id="tipe" name="tipe">
       	<option value="" holder>Pilih Tipe User</option>
-      	<option value="1" holder>Administrator</option>
-      	<option value="0" holder>Penulis</option>
+      	<option value="1" @if (old('tipe') == "1") {{ 'selected' }} @endif>Administrator</option>
+      	<option value="0" @if (old('tipe') == "2") {{ 'selected' }} @endif>Operator</option>
       </select>
   </div>
 
    <div class="form-group">
       <label>Password</label>
-      <input type="text" class="form-control" name="password">
+      <input type="text" class="form-control" name="password" required="required">
   </div>
 
   <div class="form-group">

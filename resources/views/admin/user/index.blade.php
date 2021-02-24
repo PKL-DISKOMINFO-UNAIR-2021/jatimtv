@@ -31,7 +31,7 @@
 					@if($hasil->tipe)
 						<span class="badge badge-info">Administrator</span>
 						@else
-						<span class="badge badge-warning">Penulis</span>
+						<span class="badge badge-warning">Operator</span>
 					@endif
 
 				</td>

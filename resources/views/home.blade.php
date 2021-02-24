@@ -3,6 +3,7 @@
 @section('content')
 <div class="container">
 <div class="main-section">
+		@if (Auth::user()->tipe == 1)
 		<div class="dashbord">
 			<div class="icon-section">
 				<i class="fas fa-book-open" aria-hidden="true"></i><br>
@@ -66,6 +67,18 @@
 				<a href="{{ route('user.index') }}">More Info </a>
 			</div>
 		</div>
+		@endif
+		@if (Auth::user()->tipe == 0)
+		<div class="dashbord">
+			<div class="icon-section">
+				<i class="fas fa-book-open" aria-hidden="true"></i><br>
+				<P>POST</P>
+			</div>
+			<div class="detail-section">
+				<a href="{{ route('post.index') }}">More Info </a>
+			</div>
+		</div>
+		@endif
 	</div>
 </div>
 @endsection

@@ -43,7 +43,7 @@
       	@if($user->tipe == 0)
       	selected
       	@endif
-      	>Penulis</option>
+      	>Operator</option>
       </select>
   </div>
 

@@ -28,10 +28,8 @@ Route::get('/list-category/{category}','BlogController@list_category')->name('bl
 Route::get('/cari','BlogController@cari')->name('blog.cari');
 
 
-
-
-Route::group(['middleware' => 'auth'], function(){
-	Route::get('/home', 'HomeController@index')->name('home');
+Route::group(['middleware' => ['auth','cektipeuser:1']], function(){
+	
 	Route::resource('/category', 'CategoryController');
 	Route::resource('/tag', 'TagController');
 	Route::resource('/channels', 'ChannelController');
@@ -40,20 +38,24 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('/channels/restore/{id}', 'ChannelController@restore')->name('channels.restore');
 	Route::delete('/channels/kill/{id}', 'ChannelController@kill')->name('channels.kill');
 
+	
+	Route::resource('/explore', 'exploresController');
+	Route::resource('/about', 'AboutsController');
+	Route::resource('/carousel', 'CarouselsController');
+	
+});
+
+Route::group(['middleware' => ['auth','cektipeuser:0,1']], function(){
+	Route::get('/home', 'HomeController@index')->name('home');
+
 	Route::get('/post/tampil_hapus', 'PostController@tampil_hapus')->name('post.tampil_hapus');
 	Route::get('/post/restore/{id}', 'PostController@restore')->name('post.restore');
 	Route::delete('/post/kill/{id}', 'PostController@kill')->name('post.kill');
 	Route::resource('/post', 'PostController');
-	Route::resource('/explore', 'exploresController');
-
-	Route::resource('/user', 'UserController');
-	Route::resource('/about', 'AboutsController');
-	Route::resource('/carousel', 'CarouselsController');
 	Route::resource('/bannernewrelease', 'BannernewreleaseController');
 	Route::resource('/bannerexplore', 'BannerexploreController');
-
+	Route::resource('/user', 'UserController');
 });
-
 
 
 

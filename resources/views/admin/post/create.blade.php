@@ -21,24 +21,24 @@
   @csrf
   <div class="form-group">
       <label>Judul</label>
-      <input type="text" name="judul" class="form-control" value="{{ old('judul') }}" required="required" placeholder="Masukkan Judul">
+      <input type="text" name="judul" class="form-control">
     
   </div>
   <div class="form-group">
       <label >Kategori</label>
-      <select class="form-control" name="category_id[]" id="category_id"required="required">
+      <select class="form-control" name="category_id">
       	<option value="" disabled selected >Pilih Kategori</option>
       	@foreach($category as $result)
-      	<option value="{{ $result->id }}"  {{ (collect(old('category_id'))->contains($result->id)) ? 'selected':'' }} >{{  $result->name }}</option>
+      	<option value="{{ $result->id }}">{{  $result->name }}</option>
       	@endforeach
       </select>
   </div>
   <div class="form-group">
       <label>Pilih Konten</label>
-      <select class="form-control" name="tags[]" id="tags"required="required">
+      <select class="form-control" name="tags">
       <option value="" disabled selected >Pilih Konten</option>
           @foreach($tags as $tag)
-          <option value="{{ $tag->id }}" {{ (collect(old('tags'))->contains($tag->id)) ? 'selected':'' }}>{{ $tag->name }}</option> 
+          <option value="{{ $tag->id }}">{{ $tag->name }}</option> 
           @endforeach
       </select>
   </div>

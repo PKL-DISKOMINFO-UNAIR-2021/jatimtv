@@ -34,7 +34,7 @@
       <select class="form-control" id="tipe" name="tipe">
       	<option value="" holder>Pilih Tipe User</option>
       	<option value="1" @if (old('tipe') == "1") {{ 'selected' }} @endif>Administrator</option>
-      	<option value="0" @if (old('tipe') == "2") {{ 'selected' }} @endif>Operator</option>
+      	<option value="0" @if (old('tipe') == "0") {{ 'selected' }} @endif>Operator</option>
       </select>
   </div>
 

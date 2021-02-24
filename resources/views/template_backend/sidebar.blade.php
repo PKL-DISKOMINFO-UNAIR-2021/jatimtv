@@ -13,6 +13,8 @@
 
 
             <li class="menu-header">Starter</li>
+            @if (Auth::user()->tipe == 1)
+            
             <li class="dropdown">
               <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-book-open"></i> <span>Post</span></a>
               <ul class="dropdown-menu">
@@ -22,6 +24,7 @@
                 <li><a class="nav-link" href="{{ route('bannerexplore.index') }}">List Banner Explore</a></li>   
               </ul>
             </li>
+            
             <li class="dropdown">
               <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="far fa-clipboard"></i> <span>Playlist</span></a>
               <ul class="dropdown-menu">
@@ -58,6 +61,19 @@
                 <li><a class="nav-link" href="{{ route('user.index') }}">List User</a></li>            
               </ul>
             </li>
+            @endif
+            @if (Auth::user()->tipe == 0)
+            
+            <li class="dropdown">
+              <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-book-open"></i> <span>Post</span></a>
+              <ul class="dropdown-menu">
+                <li><a class="nav-link" href="{{ route('post.index') }}">List Post</a></li> 
+                <li><a class="nav-link" href="{{ route('post.tampil_hapus') }}">List Post Dihapus</a></li>
+                <li><a class="nav-link" href="{{ route('bannernewrelease.index') }}">List Banner New Release</a></li>              
+                <li><a class="nav-link" href="{{ route('bannerexplore.index') }}">List Banner Explore</a></li>   
+              </ul>
+            </li>
+            @endif
     
        
         </aside>

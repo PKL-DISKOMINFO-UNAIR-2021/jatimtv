@@ -1,5 +1,5 @@
 @extends('template_backend.home')
-@section('sub-judul','Tambah Post')
+@section('sub-judul','Tambah Carousel')
 @section('content')
 
   @if(count($errors)>0)
@@ -38,7 +38,7 @@
   
 
   <div class="form-group">
-      <button class="btn btn-primary btn-block">Tambah Informasi</button>
+      <button class="btn btn-primary btn-block">Tambah Carousel</button>
   </div>
   </form>
 

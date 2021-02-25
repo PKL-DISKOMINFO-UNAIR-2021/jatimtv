@@ -21,34 +21,32 @@
   @csrf
   <div class="form-group">
       <label>Judul</label>
-      <input type="text" name="judul" class="form-control" value="{{ old('judul') }}">
+      <input type="text" name="judul" class="form-control" required="required"value="{{ old('judul') }}" placeholder="Masukkan Judul">
     
   </div>
   <div class="form-group">
-<<<<<<< HEAD
       <label>Kategori</label>
-      <select class="form-control" name="category_id" required="required">>
+      <select class="form-control" name="category_id" required="required" >
       	<option value="" holder>Pilih Kategori</option>
-=======
-      <label >Kategori</label>
-      <select class="form-control" name="category_id">
-      	<option value="" disabled selected >Pilih Kategori</option>
->>>>>>> b13085c306aa20dd1158b408b52011309e2b16d9
       	@foreach($category as $result)
-      	<option value="{{ $result->id }}">{{  $result->name }}</option>
+          @if (old('category_id') == $result->id)
+      	<option value="{{ $result->id }}" selected>{{  $result->name }}</option>
+          @else
+          <option value="{{ $result->id }}" >{{  $result->name }}</option>
+          @endif
       	@endforeach
       </select>
   </div>
   <div class="form-group">
       <label>Pilih Konten</label>
       <select class="form-control" name="tags">
-<<<<<<< HEAD
       <option value="" holder>Pilih Konten</option>
-=======
-      <option value="" disabled selected >Pilih Konten</option>
->>>>>>> b13085c306aa20dd1158b408b52011309e2b16d9
           @foreach($tags as $tag)
-          <option value="{{ $tag->id }}">{{ $tag->name }}</option> 
+          @if (old('tags') == $tag->id)
+            <option value="{{ $tag->id }}" selected>{{ $tag->name }}</option> 
+          @else
+            <option value="{{ $tag->id }}" >{{ $tag->name }}</option>
+          @endif
           @endforeach
       </select>
   </div>
@@ -58,7 +56,7 @@
   </div>
   <div class="form-group">
       <label>Thumbnail</label>
-      <input type="file" name="gambar" class="form-control">
+      <input type="file" name="gambar" class="form-control" >
   </div>
 
   <div class="form-group">
@@ -72,5 +70,4 @@
   CKEDITOR.replace( 'content' );
 
 </script>
-
 @endsection

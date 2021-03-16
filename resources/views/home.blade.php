@@ -16,7 +16,7 @@
 		<div class="dashbord dashbord-green">
 			<div class="icon-section">
 				<i class="far fa-clipboard" aria-hidden="true"></i><br>
-				<p>KATEGORI</p>
+				<p>PLAYLIST</p>
 			</div>
 			<div class="detail-section">
 				<a href="{{ route('category.index') }}">More Info </a>
@@ -43,7 +43,7 @@
 		<div class="dashbord dashbord-red">
 			<div class="icon-section">
 				<i class="far fa-bookmark" aria-hidden="true"></i><br>
-				<p>TAG</p>
+				<p>TIPE KONTEN</p>
 			</div>
 			<div class="detail-section">
 				<a href="{{ route('tag.index') }}">More Info </a>

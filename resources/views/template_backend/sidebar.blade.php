@@ -44,9 +44,9 @@
               </ul>
             </li>
             <li class="dropdown">
-              <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="far fa-bookmark"></i> <span>Tag</span></a>
+              <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="far fa-bookmark"></i> <span>Tipe Konten</span></a>
               <ul class="dropdown-menu">
-                <li><a class="nav-link" href="{{ route('tag.index') }}">List Tag</a></li>            
+                <li><a class="nav-link" href="{{ route('tag.index') }}">List Konten</a></li>            
               </ul>
             </li>
             <li class="dropdown">

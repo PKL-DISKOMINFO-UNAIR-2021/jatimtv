@@ -1,10 +1,7 @@
 @extends('template_blog.content')
-<<<<<<< HEAD
-=======
 @section('linkcss')
 
 @endsection
->>>>>>> a85699f4e694446da15fc1f5974e3783ae711d4f
 @section('title','newrelease')
 @section('nav')
 <div class="nav-items">
@@ -35,7 +32,7 @@
         <div class="movies-box">
             <!--img------------>
             <div class="movies-img">
-                <a href="{{ route('blog.isiexplore', $ex->slug ) }}"><img src="{{ $ex->gambar }}"/></a>
+                <a href="{{ route('blog.isi', $ex->slug ) }}"><img src="{{ $ex->gambar }}"/></a>
             </div>
             <!--text--------->
             <a href="{{ route('blog.isi', $ex->slug ) }}">
